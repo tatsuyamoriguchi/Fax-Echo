@@ -64,8 +64,6 @@
 		8C2286072C33CD6F0011BE64 /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285E62C33CD6F0011BE64 /* TextFieldStyle.swift */; };
 		8C2286082C33CD6F0011BE64 /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285E62C33CD6F0011BE64 /* TextFieldStyle.swift */; };
 		8C2286112C33CDA50011BE64 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
-		8C2286122C33CDA50011BE64 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
-		8C2286132C33CDA50011BE64 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
 		8C2286142C33CDA50011BE64 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22860A2C33CDA50011BE64 /* Base64.swift */; };
 		8C2286152C33CDA50011BE64 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22860A2C33CDA50011BE64 /* Base64.swift */; };
 		8C2286162C33CDA50011BE64 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22860A2C33CDA50011BE64 /* Base64.swift */; };
@@ -84,6 +82,44 @@
 		8C2286272C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
 		8C2286282C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
 		8C2286292C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
+		8C50E0A32C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
+		8C50E0A42C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
+		8C50E0A52C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
+		8C50E0A62C346CF8007BE419 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0962C346CF8007BE419 /* Inter-Bold.ttf */; };
+		8C50E0A72C346CF8007BE419 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0962C346CF8007BE419 /* Inter-Bold.ttf */; };
+		8C50E0A82C346CF8007BE419 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0962C346CF8007BE419 /* Inter-Bold.ttf */; };
+		8C50E0A92C346CF8007BE419 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */; };
+		8C50E0AA2C346CF8007BE419 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */; };
+		8C50E0AB2C346CF8007BE419 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */; };
+		8C50E0AC2C346CF8007BE419 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */; };
+		8C50E0AD2C346CF8007BE419 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */; };
+		8C50E0AE2C346CF8007BE419 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */; };
+		8C50E0AF2C346CF8007BE419 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0992C346CF8007BE419 /* Inter-Light.ttf */; };
+		8C50E0B02C346CF8007BE419 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0992C346CF8007BE419 /* Inter-Light.ttf */; };
+		8C50E0B12C346CF8007BE419 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0992C346CF8007BE419 /* Inter-Light.ttf */; };
+		8C50E0B22C346CF8007BE419 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09A2C346CF8007BE419 /* Inter-Medium.ttf */; };
+		8C50E0B32C346CF8007BE419 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09A2C346CF8007BE419 /* Inter-Medium.ttf */; };
+		8C50E0B42C346CF8007BE419 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09A2C346CF8007BE419 /* Inter-Medium.ttf */; };
+		8C50E0B52C346CF8007BE419 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09B2C346CF8007BE419 /* Inter-Regular.ttf */; };
+		8C50E0B62C346CF8007BE419 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09B2C346CF8007BE419 /* Inter-Regular.ttf */; };
+		8C50E0B72C346CF8007BE419 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09B2C346CF8007BE419 /* Inter-Regular.ttf */; };
+		8C50E0B82C346CF8007BE419 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09C2C346CF8007BE419 /* Inter-SemiBold.ttf */; };
+		8C50E0B92C346CF8007BE419 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09C2C346CF8007BE419 /* Inter-SemiBold.ttf */; };
+		8C50E0BA2C346CF8007BE419 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09C2C346CF8007BE419 /* Inter-SemiBold.ttf */; };
+		8C50E0BB2C346CF8007BE419 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */; };
+		8C50E0BC2C346CF8007BE419 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */; };
+		8C50E0BD2C346CF8007BE419 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */; };
+		8C50E0BE2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09F2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf */; };
+		8C50E0BF2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09F2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf */; };
+		8C50E0C02C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E09F2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf */; };
+		8C50E0C12C346CF8007BE419 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A02C346CF8007BE419 /* OFL.txt */; };
+		8C50E0C22C346CF8007BE419 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A02C346CF8007BE419 /* OFL.txt */; };
+		8C50E0C32C346CF8007BE419 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A02C346CF8007BE419 /* OFL.txt */; };
+		8C50E0C42C346CF8007BE419 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A12C346CF8007BE419 /* README.txt */; };
+		8C50E0C52C346CF8007BE419 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A12C346CF8007BE419 /* README.txt */; };
+		8C50E0C62C346CF8007BE419 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A12C346CF8007BE419 /* README.txt */; };
+		8C50E0C82C347B54007BE419 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
+		8C50E0C92C347B55007BE419 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +172,19 @@
 		8C22860E2C33CDA50011BE64 /* MultipleReceivedFaxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleReceivedFaxes.swift; sourceTree = "<group>"; };
 		8C22860F2C33CDA50011BE64 /* TokenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
 		8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eFax_EchoApp.swift; sourceTree = "<group>"; };
+		8C50E0952C346CF8007BE419 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		8C50E0962C346CF8007BE419 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8C50E0992C346CF8007BE419 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		8C50E09A2C346CF8007BE419 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		8C50E09B2C346CF8007BE419 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		8C50E09C2C346CF8007BE419 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		8C50E09F2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		8C50E0A02C346CF8007BE419 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		8C50E0A12C346CF8007BE419 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8C50E0C72C346D6D007BE419 /* Fax-Echo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fax-Echo-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +235,11 @@
 		8C2285962C33CA9F0011BE64 /* Fax Echo */ = {
 			isa = PBXGroup;
 			children = (
+				8C50E0A22C346CF8007BE419 /* Inter */,
+				8C50E0C72C346D6D007BE419 /* Fax-Echo-Info.plist */,
+				8C50E0992C346CF8007BE419 /* Inter-Light.ttf */,
+				8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */,
+				8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */,
 				8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */,
 				8C2285C92C33CD560011BE64 /* Model */,
 				8C2285E72C33CD6F0011BE64 /* View */,
@@ -263,6 +317,30 @@
 				8C22860F2C33CDA50011BE64 /* TokenViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C50E09E2C346CF8007BE419 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				8C50E0952C346CF8007BE419 /* Inter-Black.ttf */,
+				8C50E0962C346CF8007BE419 /* Inter-Bold.ttf */,
+				8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */,
+				8C50E09A2C346CF8007BE419 /* Inter-Medium.ttf */,
+				8C50E09B2C346CF8007BE419 /* Inter-Regular.ttf */,
+				8C50E09C2C346CF8007BE419 /* Inter-SemiBold.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		8C50E0A22C346CF8007BE419 /* Inter */ = {
+			isa = PBXGroup;
+			children = (
+				8C50E09F2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf */,
+				8C50E09E2C346CF8007BE419 /* static */,
+				8C50E0A02C346CF8007BE419 /* OFL.txt */,
+				8C50E0A12C346CF8007BE419 /* README.txt */,
+			);
+			path = Inter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,8 +447,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C50E0A92C346CF8007BE419 /* Inter-ExtraBold.ttf in Resources */,
+				8C50E0B52C346CF8007BE419 /* Inter-Regular.ttf in Resources */,
+				8C50E0AC2C346CF8007BE419 /* Inter-ExtraLight.ttf in Resources */,
 				8C2285A12C33CAA10011BE64 /* Preview Assets.xcassets in Resources */,
+				8C50E0BE2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				8C50E0A32C346CF8007BE419 /* Inter-Black.ttf in Resources */,
+				8C50E0BB2C346CF8007BE419 /* Inter-Thin.ttf in Resources */,
+				8C50E0B22C346CF8007BE419 /* Inter-Medium.ttf in Resources */,
+				8C50E0C12C346CF8007BE419 /* OFL.txt in Resources */,
+				8C50E0A62C346CF8007BE419 /* Inter-Bold.ttf in Resources */,
 				8C22859E2C33CAA10011BE64 /* Assets.xcassets in Resources */,
+				8C50E0B82C346CF8007BE419 /* Inter-SemiBold.ttf in Resources */,
+				8C50E0C42C346CF8007BE419 /* README.txt in Resources */,
+				8C50E0AF2C346CF8007BE419 /* Inter-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +468,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C50E0B02C346CF8007BE419 /* Inter-Light.ttf in Resources */,
+				8C50E0C22C346CF8007BE419 /* OFL.txt in Resources */,
+				8C50E0A72C346CF8007BE419 /* Inter-Bold.ttf in Resources */,
+				8C50E0BC2C346CF8007BE419 /* Inter-Thin.ttf in Resources */,
+				8C50E0B32C346CF8007BE419 /* Inter-Medium.ttf in Resources */,
+				8C50E0A42C346CF8007BE419 /* Inter-Black.ttf in Resources */,
+				8C50E0B92C346CF8007BE419 /* Inter-SemiBold.ttf in Resources */,
+				8C50E0BF2C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				8C50E0AA2C346CF8007BE419 /* Inter-ExtraBold.ttf in Resources */,
+				8C50E0AD2C346CF8007BE419 /* Inter-ExtraLight.ttf in Resources */,
+				8C50E0C52C346CF8007BE419 /* README.txt in Resources */,
+				8C50E0B62C346CF8007BE419 /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +487,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C50E0B12C346CF8007BE419 /* Inter-Light.ttf in Resources */,
+				8C50E0C32C346CF8007BE419 /* OFL.txt in Resources */,
+				8C50E0A82C346CF8007BE419 /* Inter-Bold.ttf in Resources */,
+				8C50E0BD2C346CF8007BE419 /* Inter-Thin.ttf in Resources */,
+				8C50E0B42C346CF8007BE419 /* Inter-Medium.ttf in Resources */,
+				8C50E0A52C346CF8007BE419 /* Inter-Black.ttf in Resources */,
+				8C50E0BA2C346CF8007BE419 /* Inter-SemiBold.ttf in Resources */,
+				8C50E0C02C346CF8007BE419 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				8C50E0AB2C346CF8007BE419 /* Inter-ExtraBold.ttf in Resources */,
+				8C50E0AE2C346CF8007BE419 /* Inter-ExtraLight.ttf in Resources */,
+				8C50E0C62C346CF8007BE419 /* README.txt in Resources */,
+				8C50E0B72C346CF8007BE419 /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,13 +547,13 @@
 				8C2286042C33CD6F0011BE64 /* Settings.swift in Sources */,
 				8C2286182C33CDA50011BE64 /* DateTimeFormatter.swift in Sources */,
 				8C22861B2C33CDA50011BE64 /* Keychain.swift in Sources */,
-				8C2286122C33CDA50011BE64 /* AuthenticationManager.swift in Sources */,
 				8C2285F22C33CD6F0011BE64 /* FaxDetailView.swift in Sources */,
 				8C2285DA2C33CD560011BE64 /* Token.swift in Sources */,
 				8C2285E92C33CD6F0011BE64 /* ContentView.swift in Sources */,
 				8C2286152C33CDA50011BE64 /* Base64.swift in Sources */,
 				8C2285FE2C33CD6F0011BE64 /* Login.swift in Sources */,
 				8C2285EF2C33CD6F0011BE64 /* Dashboard2.swift in Sources */,
+				8C50E0C82C347B54007BE419 /* AuthenticationManager.swift in Sources */,
 				8C2286282C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */,
 				8C2286012C33CD6F0011BE64 /* Registration.swift in Sources */,
 				8C2285CB2C33CD560011BE64 /* DemoData.swift in Sources */,
@@ -465,6 +579,7 @@
 				8C2285FC2C33CD6F0011BE64 /* Info.swift in Sources */,
 				8C2285ED2C33CD6F0011BE64 /* Dashboard.swift in Sources */,
 				8C2285CC2C33CD560011BE64 /* DemoData.swift in Sources */,
+				8C50E0C92C347B55007BE419 /* AuthenticationManager.swift in Sources */,
 				8C2286052C33CD6F0011BE64 /* Settings.swift in Sources */,
 				8C2285B72C33CAA10011BE64 /* Fax_EchoUITestsLaunchTests.swift in Sources */,
 				8C2285B52C33CAA10011BE64 /* Fax_EchoUITests.swift in Sources */,
@@ -474,7 +589,6 @@
 				8C2286222C33CDA50011BE64 /* MultipleReceivedFaxes.swift in Sources */,
 				8C2285D52C33CD560011BE64 /* SwipeMenu.swift in Sources */,
 				8C2286022C33CD6F0011BE64 /* Registration.swift in Sources */,
-				8C2286132C33CDA50011BE64 /* AuthenticationManager.swift in Sources */,
 				8C2285F62C33CD6F0011BE64 /* FaxModalView.swift in Sources */,
 				8C2285F02C33CD6F0011BE64 /* Dashboard2.swift in Sources */,
 				8C2286252C33CDA50011BE64 /* TokenViewModel.swift in Sources */,
@@ -633,6 +747,7 @@
 				DEVELOPMENT_TEAM = 86C8SC428C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fax-Echo-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -662,6 +777,7 @@
 				DEVELOPMENT_TEAM = 86C8SC428C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fax-Echo-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
