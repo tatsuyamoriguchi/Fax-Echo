@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C2285982C33CA9F0011BE64 /* Fax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285972C33CA9F0011BE64 /* Fax_EchoApp.swift */; };
+		8C22859A2C33CA9F0011BE64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285992C33CA9F0011BE64 /* ContentView.swift */; };
+		8C22859C2C33CA9F0011BE64 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22859B2C33CA9F0011BE64 /* Item.swift */; };
+		8C22859E2C33CAA10011BE64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C22859D2C33CAA10011BE64 /* Assets.xcassets */; };
+		8C2285A12C33CAA10011BE64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C2285A02C33CAA10011BE64 /* Preview Assets.xcassets */; };
+		8C2285AB2C33CAA10011BE64 /* Fax_EchoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285AA2C33CAA10011BE64 /* Fax_EchoTests.swift */; };
+		8C2285B52C33CAA10011BE64 /* Fax_EchoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285B42C33CAA10011BE64 /* Fax_EchoUITests.swift */; };
+		8C2285B72C33CAA10011BE64 /* Fax_EchoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285B62C33CAA10011BE64 /* Fax_EchoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C2285A72C33CAA10011BE64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C22858C2C33CA9F0011BE64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C2285932C33CA9F0011BE64;
+			remoteInfo = "Fax Echo";
+		};
+		8C2285B12C33CAA10011BE64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C22858C2C33CA9F0011BE64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C2285932C33CA9F0011BE64;
+			remoteInfo = "Fax Echo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8C2285942C33CA9F0011BE64 /* Fax Echo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fax Echo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2285972C33CA9F0011BE64 /* Fax_EchoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fax_EchoApp.swift; sourceTree = "<group>"; };
+		8C2285992C33CA9F0011BE64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8C22859B2C33CA9F0011BE64 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8C22859D2C33CAA10011BE64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C2285A02C33CAA10011BE64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8C2285A62C33CAA10011BE64 /* Fax EchoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fax EchoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2285AA2C33CAA10011BE64 /* Fax_EchoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fax_EchoTests.swift; sourceTree = "<group>"; };
+		8C2285B02C33CAA10011BE64 /* Fax EchoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fax EchoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2285B42C33CAA10011BE64 /* Fax_EchoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fax_EchoUITests.swift; sourceTree = "<group>"; };
+		8C2285B62C33CAA10011BE64 /* Fax_EchoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fax_EchoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C2285912C33CA9F0011BE64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2285A32C33CAA10011BE64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2285AD2C33CAA10011BE64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C22858B2C33CA9F0011BE64 = {
+			isa = PBXGroup;
+			children = (
+				8C2285962C33CA9F0011BE64 /* Fax Echo */,
+				8C2285A92C33CAA10011BE64 /* Fax EchoTests */,
+				8C2285B32C33CAA10011BE64 /* Fax EchoUITests */,
+				8C2285952C33CA9F0011BE64 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C2285952C33CA9F0011BE64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C2285942C33CA9F0011BE64 /* Fax Echo.app */,
+				8C2285A62C33CAA10011BE64 /* Fax EchoTests.xctest */,
+				8C2285B02C33CAA10011BE64 /* Fax EchoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C2285962C33CA9F0011BE64 /* Fax Echo */ = {
+			isa = PBXGroup;
+			children = (
+				8C2285972C33CA9F0011BE64 /* Fax_EchoApp.swift */,
+				8C2285992C33CA9F0011BE64 /* ContentView.swift */,
+				8C22859B2C33CA9F0011BE64 /* Item.swift */,
+				8C22859D2C33CAA10011BE64 /* Assets.xcassets */,
+				8C22859F2C33CAA10011BE64 /* Preview Content */,
+			);
+			path = "Fax Echo";
+			sourceTree = "<group>";
+		};
+		8C22859F2C33CAA10011BE64 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8C2285A02C33CAA10011BE64 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8C2285A92C33CAA10011BE64 /* Fax EchoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C2285AA2C33CAA10011BE64 /* Fax_EchoTests.swift */,
+			);
+			path = "Fax EchoTests";
+			sourceTree = "<group>";
+		};
+		8C2285B32C33CAA10011BE64 /* Fax EchoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8C2285B42C33CAA10011BE64 /* Fax_EchoUITests.swift */,
+				8C2285B62C33CAA10011BE64 /* Fax_EchoUITestsLaunchTests.swift */,
+			);
+			path = "Fax EchoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C2285932C33CA9F0011BE64 /* Fax Echo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C2285BA2C33CAA10011BE64 /* Build configuration list for PBXNativeTarget "Fax Echo" */;
+			buildPhases = (
+				8C2285902C33CA9F0011BE64 /* Sources */,
+				8C2285912C33CA9F0011BE64 /* Frameworks */,
+				8C2285922C33CA9F0011BE64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fax Echo";
+			productName = "Fax Echo";
+			productReference = 8C2285942C33CA9F0011BE64 /* Fax Echo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C2285A52C33CAA10011BE64 /* Fax EchoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C2285BD2C33CAA10011BE64 /* Build configuration list for PBXNativeTarget "Fax EchoTests" */;
+			buildPhases = (
+				8C2285A22C33CAA10011BE64 /* Sources */,
+				8C2285A32C33CAA10011BE64 /* Frameworks */,
+				8C2285A42C33CAA10011BE64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C2285A82C33CAA10011BE64 /* PBXTargetDependency */,
+			);
+			name = "Fax EchoTests";
+			productName = "Fax EchoTests";
+			productReference = 8C2285A62C33CAA10011BE64 /* Fax EchoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8C2285AF2C33CAA10011BE64 /* Fax EchoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C2285C02C33CAA10011BE64 /* Build configuration list for PBXNativeTarget "Fax EchoUITests" */;
+			buildPhases = (
+				8C2285AC2C33CAA10011BE64 /* Sources */,
+				8C2285AD2C33CAA10011BE64 /* Frameworks */,
+				8C2285AE2C33CAA10011BE64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C2285B22C33CAA10011BE64 /* PBXTargetDependency */,
+			);
+			name = "Fax EchoUITests";
+			productName = "Fax EchoUITests";
+			productReference = 8C2285B02C33CAA10011BE64 /* Fax EchoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C22858C2C33CA9F0011BE64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					8C2285932C33CA9F0011BE64 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					8C2285A52C33CAA10011BE64 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 8C2285932C33CA9F0011BE64;
+					};
+					8C2285AF2C33CAA10011BE64 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 8C2285932C33CA9F0011BE64;
+					};
+				};
+			};
+			buildConfigurationList = 8C22858F2C33CA9F0011BE64 /* Build configuration list for PBXProject "Fax Echo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C22858B2C33CA9F0011BE64;
+			productRefGroup = 8C2285952C33CA9F0011BE64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C2285932C33CA9F0011BE64 /* Fax Echo */,
+				8C2285A52C33CAA10011BE64 /* Fax EchoTests */,
+				8C2285AF2C33CAA10011BE64 /* Fax EchoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C2285922C33CA9F0011BE64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C2285A12C33CAA10011BE64 /* Preview Assets.xcassets in Resources */,
+				8C22859E2C33CAA10011BE64 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2285A42C33CAA10011BE64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2285AE2C33CAA10011BE64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C2285902C33CA9F0011BE64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C22859A2C33CA9F0011BE64 /* ContentView.swift in Sources */,
+				8C22859C2C33CA9F0011BE64 /* Item.swift in Sources */,
+				8C2285982C33CA9F0011BE64 /* Fax_EchoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2285A22C33CAA10011BE64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C2285AB2C33CAA10011BE64 /* Fax_EchoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2285AC2C33CAA10011BE64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C2285B72C33CAA10011BE64 /* Fax_EchoUITestsLaunchTests.swift in Sources */,
+				8C2285B52C33CAA10011BE64 /* Fax_EchoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C2285A82C33CAA10011BE64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C2285932C33CA9F0011BE64 /* Fax Echo */;
+			targetProxy = 8C2285A72C33CAA10011BE64 /* PBXContainerItemProxy */;
+		};
+		8C2285B22C33CAA10011BE64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C2285932C33CA9F0011BE64 /* Fax Echo */;
+			targetProxy = 8C2285B12C33CAA10011BE64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8C2285B82C33CAA10011BE64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C2285B92C33CAA10011BE64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C2285BB2C33CAA10011BE64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fax Echo/Preview Content\"";
+				DEVELOPMENT_TEAM = 86C8SC428C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sigabrt.Fax-Echo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C2285BC2C33CAA10011BE64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fax Echo/Preview Content\"";
+				DEVELOPMENT_TEAM = 86C8SC428C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sigabrt.Fax-Echo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8C2285BE2C33CAA10011BE64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86C8SC428C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sigabrt.Fax-EchoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fax Echo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fax Echo";
+			};
+			name = Debug;
+		};
+		8C2285BF2C33CAA10011BE64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86C8SC428C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sigabrt.Fax-EchoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fax Echo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fax Echo";
+			};
+			name = Release;
+		};
+		8C2285C12C33CAA10011BE64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86C8SC428C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sigabrt.Fax-EchoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fax Echo";
+			};
+			name = Debug;
+		};
+		8C2285C22C33CAA10011BE64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86C8SC428C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sigabrt.Fax-EchoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fax Echo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C22858F2C33CA9F0011BE64 /* Build configuration list for PBXProject "Fax Echo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C2285B82C33CAA10011BE64 /* Debug */,
+				8C2285B92C33CAA10011BE64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C2285BA2C33CAA10011BE64 /* Build configuration list for PBXNativeTarget "Fax Echo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C2285BB2C33CAA10011BE64 /* Debug */,
+				8C2285BC2C33CAA10011BE64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C2285BD2C33CAA10011BE64 /* Build configuration list for PBXNativeTarget "Fax EchoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C2285BE2C33CAA10011BE64 /* Debug */,
+				8C2285BF2C33CAA10011BE64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C2285C02C33CAA10011BE64 /* Build configuration list for PBXNativeTarget "Fax EchoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C2285C12C33CAA10011BE64 /* Debug */,
+				8C2285C22C33CAA10011BE64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C22858C2C33CA9F0011BE64 /* Project object */;
+}
