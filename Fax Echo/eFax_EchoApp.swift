@@ -2,7 +2,7 @@
 //  Fax_EchoApp.swift
 //  Fax Echo
 //
-//  Created by Tatsuya Moriguchi on 7/1/24.
+//  Created by Tatsuya Moriguchi on 4/11/24.
 //
 
 import SwiftUI
@@ -10,9 +10,11 @@ import SwiftData
 
 @main
 struct Fax_EchoApp: App {
+    @ObservedObject var authManager = AuthenticationManager()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            ReplyStatus.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -22,11 +24,19 @@ struct Fax_EchoApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if authManager.isLoggedIn == true {
+                    ContentView(authManager: authManager)
+                        .modelContainer(sharedModelContainer)
+                } else {
+                    Login(authManager: authManager)
+                        .modelContainer(sharedModelContainer)
+                }
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
+
