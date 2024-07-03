@@ -10,7 +10,7 @@ import SwiftUI
 struct Login: View {
     @FocusState private var useridFieldIsFocused: Bool
     
-    @ObservedObject var authManager = AuthenticationManager()
+    @ObservedObject var authManager: AuthenticationManager
     
     @State private var showRegistration = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -89,5 +89,5 @@ struct Login: View {
 }
 
 #Preview {
-    Login()
+    Login(authManager: AuthenticationManager())
 }

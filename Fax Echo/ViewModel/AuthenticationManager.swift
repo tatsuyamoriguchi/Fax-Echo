@@ -11,10 +11,12 @@ import Security
 class AuthenticationManager: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var token: String = ""
+
     @Published var appid: String = ""
     @Published var apikey: String = ""
     @Published var userid: String = ""
         
+    
     func register(appid: String, apikey: String, userid: String, faxNumber: String) -> Bool {
         
         do {

@@ -82,6 +82,7 @@
 		8C2286272C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
 		8C2286282C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
 		8C2286292C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
+		8C4B01E12C35C7C50072EEFC /* Dashboard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B01E02C35C7C50072EEFC /* Dashboard3.swift */; };
 		8C50E0A32C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
 		8C50E0A42C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
 		8C50E0A52C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
@@ -172,6 +173,7 @@
 		8C22860E2C33CDA50011BE64 /* MultipleReceivedFaxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleReceivedFaxes.swift; sourceTree = "<group>"; };
 		8C22860F2C33CDA50011BE64 /* TokenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
 		8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eFax_EchoApp.swift; sourceTree = "<group>"; };
+		8C4B01E02C35C7C50072EEFC /* Dashboard3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard3.swift; sourceTree = "<group>"; };
 		8C50E0952C346CF8007BE419 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		8C50E0962C346CF8007BE419 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			children = (
 				8C2285DC2C33CD6F0011BE64 /* ContentView.swift */,
 				8C2285DD2C33CD6F0011BE64 /* Dashboard.swift */,
+				8C4B01E02C35C7C50072EEFC /* Dashboard3.swift */,
 				8C2285DE2C33CD6F0011BE64 /* Dashboard2.swift */,
 				8C2285DF2C33CD6F0011BE64 /* FaxDetailView.swift */,
 				8C2285E02C33CD6F0011BE64 /* FaxModalView.swift */,
@@ -532,6 +535,7 @@
 				8C2286232C33CDA50011BE64 /* TokenViewModel.swift in Sources */,
 				8C2285D62C33CD560011BE64 /* SwipeSettings.swift in Sources */,
 				8C2286032C33CD6F0011BE64 /* Settings.swift in Sources */,
+				8C4B01E12C35C7C50072EEFC /* Dashboard3.swift in Sources */,
 				8C22861A2C33CDA50011BE64 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

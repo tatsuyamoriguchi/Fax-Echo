@@ -62,9 +62,10 @@ struct FaxRowView: View {
 }
 
 struct Dashboard: View {
-    @ObservedObject var authManager = AuthenticationManager()
+    @StateObject var authManager: AuthenticationManager
+    
     @StateObject private var multipleReceivedFaxes = MultipleReceivedFaxes()
-    private var dateTimeFormatter = DateTimeFormatter()
+    var dateTimeFormatter = DateTimeFormatter()
     @StateObject private var swipeSettings = SwipeSettings()
     
     // State variable to store the selected fax ID for querying ReplyStatus
@@ -103,6 +104,9 @@ struct Dashboard: View {
                                     getReplyStatus: getReplyStatus
                                 )
                             }
+                .swipeActions() {
+                    SwipeMenuActions()
+                }
                 
             }
             
@@ -210,11 +214,10 @@ struct Dashboard: View {
         
     }
     
-    
 }
 
 #Preview {
-    Dashboard()
+    Dashboard(authManager: AuthenticationManager())
         .modelContainer(for: ReplyStatus.self, inMemory: true)
     
 }

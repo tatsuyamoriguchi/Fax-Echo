@@ -12,7 +12,7 @@ struct Registration: View {
     @State private var apikey: String = ""
     @State private var userid: String = ""
     @State private var faxNumber: String = ""
-
+    
     @State private var message = "Obtain your APP ID, API KEY, and USER ID from your Fax Corporate Admninistrator and enter them below"
     
     @Environment(\.presentationMode) var presentationMode

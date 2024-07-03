@@ -132,6 +132,8 @@ struct Keychain {
         guard status == errSecSuccess else {
             if status == errSecItemNotFound {
                 print("No fax number found for the given appid")
+                print("appid: \(appid)")
+                print("fax number: \(Keychain.service)_faxNumber")
                 return nil
             } else {
                 print("Unhandled Keychain error: \(status)")

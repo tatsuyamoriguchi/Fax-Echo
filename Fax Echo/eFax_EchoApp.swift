@@ -10,7 +10,7 @@ import SwiftData
 
 @main
 struct Fax_EchoApp: App {
-    @ObservedObject var authManager = AuthenticationManager()
+    @StateObject var authManager = AuthenticationManager()
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([

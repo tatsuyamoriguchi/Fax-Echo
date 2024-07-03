@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var authManager = AuthenticationManager()
+    @ObservedObject var authManager: AuthenticationManager
 
     var body: some View {
         
@@ -25,12 +25,11 @@ struct HomeView: View {
 }
 
 struct HomeViewWithTabs: View {
-    @ObservedObject var authManager = AuthenticationManager()
-    
+    @ObservedObject var authManager: AuthenticationManager
 
     var body: some View {
         TabView {
-            Dashboard()
+            Dashboard(authManager: AuthenticationManager())
                 .tabItem {
                     Label("Dashboard", systemImage: "house.fill" )
                 }
@@ -65,5 +64,6 @@ struct HomeViewWithTabs: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(authManager: AuthenticationManager())
+//    HomeView()
 }
