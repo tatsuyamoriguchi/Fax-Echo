@@ -15,6 +15,9 @@ struct Login: View {
     @State private var showRegistration = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
+    @State var appid: String = ""
+    @State var apikey: String = ""
+    @State var userid: String = ""
     
     var body: some View {
         
@@ -28,20 +31,16 @@ struct Login: View {
             Image("fax-machine")
             Spacer()
             
-            TextField("Enter your app-id", text: $authManager.appid)
+            TextField("Enter your app-id", text: $appid)
                 .textFieldStyle()
-            TextField("Enter an api-key", text: $authManager.apikey)
+            TextField("Enter an api-key", text: $apikey)
                 .autocorrectionDisabled(true)
                 .autocapitalization(.none)
                 .scrollContentBackground(.hidden)
                 .textFieldStyle()
 
-            TextField("Enter your user-id", text: $authManager.userid)
+            TextField("Enter your user-id", text: $userid)
                 .focused($useridFieldIsFocused)
-                .onSubmit {
-                    print("hello")
-                    print()
-                }
                 .textFieldStyle()
 
             Spacer()
@@ -51,9 +50,10 @@ struct Login: View {
                 
                 Button("Login") {
                     // Locally authenticate user's credentials first with appid and apikey.
+                    print("appid entered: \(appid)")
                     do {
-                        let apikeyRegistered = try Keychain().retrieveApikey(appid: authManager.appid)
-                        if apikeyRegistered == authManager.apikey {
+                        let apikeyRegistered = try Keychain().retrieveApikey(appid: appid)
+                        if apikeyRegistered == apikey {
                             authManager.isLoggedIn = true
                             presentationMode.wrappedValue.dismiss()
 
@@ -89,5 +89,6 @@ struct Login: View {
 }
 
 #Preview {
+    
     Login(authManager: AuthenticationManager())
 }

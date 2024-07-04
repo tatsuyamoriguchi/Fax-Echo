@@ -28,13 +28,14 @@ struct Fax_EchoApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                if authManager.isLoggedIn == true {
+
+//                if authManager.isLoggedIn == true {
                     ContentView(authManager: authManager)
                         .modelContainer(sharedModelContainer)
-                } else {
-                    Login(authManager: authManager)
-                        .modelContainer(sharedModelContainer)
-                }
+//                } else {
+//                    Login(authManager: authManager)
+//                        .modelContainer(sharedModelContainer)
+//                }
             }
         }
     }

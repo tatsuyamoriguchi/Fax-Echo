@@ -18,7 +18,7 @@ struct ContentView: View {
             if authManager.isLoggedIn == true {
                 HomeView(authManager: authManager)
             } else {
-                Login(authManager: authManager)
+                Login(authManager: authManager, appid: authManager.appid, apikey: authManager.apikey, userid: authManager.userid)
             }
             
         }

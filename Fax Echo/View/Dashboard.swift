@@ -62,7 +62,7 @@ struct FaxRowView: View {
 }
 
 struct Dashboard: View {
-    @StateObject var authManager: AuthenticationManager
+    @ObservedObject var authManager: AuthenticationManager
     
     @StateObject private var multipleReceivedFaxes = MultipleReceivedFaxes()
     var dateTimeFormatter = DateTimeFormatter()
@@ -83,6 +83,7 @@ struct Dashboard: View {
     var myFaxNumber: String {
         do {
             let faxNumberRegistered = try Keychain().retrieveMyFaxNumber(appid: authManager.appid)
+            print("authManager.appid: \(authManager.appid)")
             return faxNumberRegistered ?? "No Fax Number Registered"
         } catch {
             print("Unable to obtain myFaxNumber: \(error)")

@@ -98,6 +98,7 @@ struct Keychain {
         
         guard status == errSecSuccess else {
             if status == errSecItemNotFound {
+                print("appid given: \(appid)")                
                 print("No apikey found for the given appid")
                 return nil
             } else {

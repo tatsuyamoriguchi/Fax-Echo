@@ -36,9 +36,6 @@
 		8C2285EB2C33CD6F0011BE64 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DD2C33CD6F0011BE64 /* Dashboard.swift */; };
 		8C2285EC2C33CD6F0011BE64 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DD2C33CD6F0011BE64 /* Dashboard.swift */; };
 		8C2285ED2C33CD6F0011BE64 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DD2C33CD6F0011BE64 /* Dashboard.swift */; };
-		8C2285EE2C33CD6F0011BE64 /* Dashboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DE2C33CD6F0011BE64 /* Dashboard2.swift */; };
-		8C2285EF2C33CD6F0011BE64 /* Dashboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DE2C33CD6F0011BE64 /* Dashboard2.swift */; };
-		8C2285F02C33CD6F0011BE64 /* Dashboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DE2C33CD6F0011BE64 /* Dashboard2.swift */; };
 		8C2285F12C33CD6F0011BE64 /* FaxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DF2C33CD6F0011BE64 /* FaxDetailView.swift */; };
 		8C2285F22C33CD6F0011BE64 /* FaxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DF2C33CD6F0011BE64 /* FaxDetailView.swift */; };
 		8C2285F32C33CD6F0011BE64 /* FaxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2285DF2C33CD6F0011BE64 /* FaxDetailView.swift */; };
@@ -79,10 +76,9 @@
 		8C2286232C33CDA50011BE64 /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22860F2C33CDA50011BE64 /* TokenViewModel.swift */; };
 		8C2286242C33CDA50011BE64 /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22860F2C33CDA50011BE64 /* TokenViewModel.swift */; };
 		8C2286252C33CDA50011BE64 /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22860F2C33CDA50011BE64 /* TokenViewModel.swift */; };
-		8C2286272C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
-		8C2286282C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
-		8C2286292C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */; };
-		8C4B01E12C35C7C50072EEFC /* Dashboard3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B01E02C35C7C50072EEFC /* Dashboard3.swift */; };
+		8C2286272C33CDC60011BE64 /* Fax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* Fax_EchoApp.swift */; };
+		8C2286282C33CDC60011BE64 /* Fax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* Fax_EchoApp.swift */; };
+		8C2286292C33CDC60011BE64 /* Fax_EchoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286262C33CDC60011BE64 /* Fax_EchoApp.swift */; };
 		8C50E0A32C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
 		8C50E0A42C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
 		8C50E0A52C346CF8007BE419 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0952C346CF8007BE419 /* Inter-Black.ttf */; };
@@ -157,7 +153,6 @@
 		8C2285C82C33CD560011BE64 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		8C2285DC2C33CD6F0011BE64 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C2285DD2C33CD6F0011BE64 /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
-		8C2285DE2C33CD6F0011BE64 /* Dashboard2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard2.swift; sourceTree = "<group>"; };
 		8C2285DF2C33CD6F0011BE64 /* FaxDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaxDetailView.swift; sourceTree = "<group>"; };
 		8C2285E02C33CD6F0011BE64 /* FaxModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaxModalView.swift; sourceTree = "<group>"; };
 		8C2285E12C33CD6F0011BE64 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -172,8 +167,7 @@
 		8C22860C2C33CDA50011BE64 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		8C22860E2C33CDA50011BE64 /* MultipleReceivedFaxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleReceivedFaxes.swift; sourceTree = "<group>"; };
 		8C22860F2C33CDA50011BE64 /* TokenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
-		8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eFax_EchoApp.swift; sourceTree = "<group>"; };
-		8C4B01E02C35C7C50072EEFC /* Dashboard3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard3.swift; sourceTree = "<group>"; };
+		8C2286262C33CDC60011BE64 /* Fax_EchoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fax_EchoApp.swift; sourceTree = "<group>"; };
 		8C50E0952C346CF8007BE419 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		8C50E0962C346CF8007BE419 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -242,7 +236,7 @@
 				8C50E0992C346CF8007BE419 /* Inter-Light.ttf */,
 				8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */,
 				8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */,
-				8C2286262C33CDC60011BE64 /* eFax_EchoApp.swift */,
+				8C2286262C33CDC60011BE64 /* Fax_EchoApp.swift */,
 				8C2285C92C33CD560011BE64 /* Model */,
 				8C2285E72C33CD6F0011BE64 /* View */,
 				8C2286102C33CDA50011BE64 /* ViewModel */,
@@ -295,8 +289,6 @@
 			children = (
 				8C2285DC2C33CD6F0011BE64 /* ContentView.swift */,
 				8C2285DD2C33CD6F0011BE64 /* Dashboard.swift */,
-				8C4B01E02C35C7C50072EEFC /* Dashboard3.swift */,
-				8C2285DE2C33CD6F0011BE64 /* Dashboard2.swift */,
 				8C2285DF2C33CD6F0011BE64 /* FaxDetailView.swift */,
 				8C2285E02C33CD6F0011BE64 /* FaxModalView.swift */,
 				8C2285E12C33CD6F0011BE64 /* HomeView.swift */,
@@ -519,8 +511,7 @@
 				8C2285D92C33CD560011BE64 /* Token.swift in Sources */,
 				8C2286142C33CDA50011BE64 /* Base64.swift in Sources */,
 				8C2286002C33CD6F0011BE64 /* Registration.swift in Sources */,
-				8C2285EE2C33CD6F0011BE64 /* Dashboard2.swift in Sources */,
-				8C2286272C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */,
+				8C2286272C33CDC60011BE64 /* Fax_EchoApp.swift in Sources */,
 				8C2285F72C33CD6F0011BE64 /* HomeView.swift in Sources */,
 				8C2285CA2C33CD560011BE64 /* DemoData.swift in Sources */,
 				8C2285EB2C33CD6F0011BE64 /* Dashboard.swift in Sources */,
@@ -535,7 +526,6 @@
 				8C2286232C33CDA50011BE64 /* TokenViewModel.swift in Sources */,
 				8C2285D62C33CD560011BE64 /* SwipeSettings.swift in Sources */,
 				8C2286032C33CD6F0011BE64 /* Settings.swift in Sources */,
-				8C4B01E12C35C7C50072EEFC /* Dashboard3.swift in Sources */,
 				8C22861A2C33CDA50011BE64 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,9 +546,8 @@
 				8C2285E92C33CD6F0011BE64 /* ContentView.swift in Sources */,
 				8C2286152C33CDA50011BE64 /* Base64.swift in Sources */,
 				8C2285FE2C33CD6F0011BE64 /* Login.swift in Sources */,
-				8C2285EF2C33CD6F0011BE64 /* Dashboard2.swift in Sources */,
 				8C50E0C82C347B54007BE419 /* AuthenticationManager.swift in Sources */,
-				8C2286282C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */,
+				8C2286282C33CDC60011BE64 /* Fax_EchoApp.swift in Sources */,
 				8C2286012C33CD6F0011BE64 /* Registration.swift in Sources */,
 				8C2285CB2C33CD560011BE64 /* DemoData.swift in Sources */,
 				8C2285EC2C33CD6F0011BE64 /* Dashboard.swift in Sources */,
@@ -594,9 +583,8 @@
 				8C2285D52C33CD560011BE64 /* SwipeMenu.swift in Sources */,
 				8C2286022C33CD6F0011BE64 /* Registration.swift in Sources */,
 				8C2285F62C33CD6F0011BE64 /* FaxModalView.swift in Sources */,
-				8C2285F02C33CD6F0011BE64 /* Dashboard2.swift in Sources */,
 				8C2286252C33CDA50011BE64 /* TokenViewModel.swift in Sources */,
-				8C2286292C33CDC60011BE64 /* eFax_EchoApp.swift in Sources */,
+				8C2286292C33CDC60011BE64 /* Fax_EchoApp.swift in Sources */,
 				8C2286162C33CDA50011BE64 /* Base64.swift in Sources */,
 				8C2285DB2C33CD560011BE64 /* Token.swift in Sources */,
 				8C2286082C33CD6F0011BE64 /* TextFieldStyle.swift in Sources */,

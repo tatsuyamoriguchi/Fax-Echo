@@ -17,7 +17,7 @@ struct HomeView: View {
             if authManager.isLoggedIn {
                 HomeViewWithTabs(authManager: authManager)
             } else {
-                Login(authManager: authManager)
+                Login(authManager: authManager, appid: authManager.appid, apikey: authManager.apikey, userid: authManager.userid)
             }
             
         }
@@ -65,5 +65,4 @@ struct HomeViewWithTabs: View {
 
 #Preview {
     HomeView(authManager: AuthenticationManager())
-//    HomeView()
 }
