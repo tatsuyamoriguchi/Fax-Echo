@@ -12,6 +12,7 @@ class AuthenticationManager: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var token: String = ""
 
+    // Aren't these supposed to be Model?
     @Published var appid: String = ""
     @Published var apikey: String = ""
     @Published var userid: String = ""
@@ -30,10 +31,7 @@ class AuthenticationManager: ObservableObject {
         return self.isLoggedIn
         
     }
-    
-    // Delete this?
-    func login(userid: String, password: String)  {
-        }
+
     
     func getToken(appid: String, apikey: String, completion: @escaping (String?) -> Void) {
         let auth: String = appid + ":" + apikey

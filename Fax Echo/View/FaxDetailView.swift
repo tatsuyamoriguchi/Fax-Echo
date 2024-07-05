@@ -101,12 +101,11 @@ struct FaxDetailView: View {
 
 }
 
-#Preview {
-    let newDataToAdd = ReplyStatus(fax_id: "fax_id123", replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
-
-    @State var status = newDataToAdd
-//    [newDataToAdd.fax_id, newDataToAdd.replyMethod, newDataToAdd.replyStatusResult, newDataToAdd.replyFaxID, newDataToAdd.replyTimeStamp]
-
-    return FaxDetailView(fax: DemoData().demoFax, status: $status)
-}
+//#Preview {
+//    let newDataToAdd = ReplyStatus(fax_id: "fax_id123", replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
+//
+//    @State var status = newDataToAdd
+//
+//    return FaxDetailView(fax: DemoData().demoFax, status: $status)
+//}
 

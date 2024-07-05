@@ -95,8 +95,6 @@ struct Dashboard: View {
     
     var body: some View {
         
-        let _ = print("appid passed to Dashboad(): \(localCredential.appid)")
-
         NavigationStack {
             
             List {
@@ -200,7 +198,6 @@ struct Dashboard: View {
         
         authManager.getToken(appid: localCredential.appid, apikey: localCredential.apikey) { token in
             if let token = token {
-                print("Token fetched from fetchFaxes(): \(token)")
                 multipleReceivedFaxes.getFaxes(token: token, userid: localCredential.userid)
             } else {
                 print("Failed to fetch token at fetchFaxes()")

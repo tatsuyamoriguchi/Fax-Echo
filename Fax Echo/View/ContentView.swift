@@ -20,7 +20,6 @@ struct ContentView: View {
             if authManager.isLoggedIn == true {
                 HomeView(authManager: authManager, localCredential: localCredential)
                 
-                let _ = print("appid from ContantView() to HomeView(): \(localCredential.appid)")
             } else {
                 Login(authManager: authManager, localCredential: localCredential)
             }
@@ -31,5 +30,5 @@ struct ContentView: View {
 
 //#Preview {
 //
-//    ContentView(authManager: AuthenticationManager(), appid: "123", apikey: "abc", userid: "onetwothree")
+//    ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
 //}

@@ -32,13 +32,8 @@ struct Fax_EchoApp: App {
         WindowGroup {
             Group {
 
-//                if authManager.isLoggedIn == true {
                 ContentView(authManager: authManager, localCredential: localCredential)
                         .modelContainer(sharedModelContainer)
-//                } else {
-//                    Login(authManager: authManager)
-//                        .modelContainer(sharedModelContainer)
-//                }
             }
         }
     }

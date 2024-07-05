@@ -78,7 +78,7 @@ struct Login: View {
                                 
                                 do {
                                     let apikeyRegistered = try Keychain().retrieveApikey(appid: localCredential.appid)
-                                    print("appid entered: \(localCredential.appid)")
+                                    
                                     if apikeyRegistered == localCredential.apikey {
                                         authManager.isLoggedIn = true
                                         //                                        presentationMode.wrappedValue.dismiss()
@@ -116,7 +116,7 @@ struct Login: View {
     }
 }
 
-#Preview {
-    
-    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "123", apikey: "abc", userid: "OneTwoThree"))
-}
+//#Preview {
+//    
+//    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "123", apikey: "abc", userid: "OneTwoThree"))
+//}

@@ -46,7 +46,6 @@ class MultipleReceivedFaxes: ObservableObject {
                 if let error = error {
                     print("Error fetching faxes from getFaxes(): \(error)")
                 } else if let httpResponse = response as? HTTPURLResponse {
-                    print("Response: \(httpResponse)")
                     
                     if let data = data {
                         if let faxes = self.handleResponseData(data) {
@@ -86,7 +85,7 @@ class MultipleReceivedFaxes: ObservableObject {
     private func printFaxes(_ faxes: [Fax]) {
         for fax in faxes {
             print("")
-            print("faxes data fro printFaxes()")
+            print("faxes data from printFaxes()")
             print("completed_timestamp: \(fax.completed_timestamp)")
             print("fax_id: \(fax.fax_id)")
             print("fax_status: \(fax.fax_status)")

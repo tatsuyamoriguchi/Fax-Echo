@@ -99,7 +99,6 @@ struct Keychain {
         
         guard status == errSecSuccess else {
             if status == errSecItemNotFound {
-                print("appid given: \(appid)")                
                 print("No apikey found for the given appid")
                 return nil
             } else {
@@ -119,12 +118,10 @@ struct Keychain {
     }
 
     func retrieveMyFaxNumber(appid: String) throws -> String? {
-        print("parameter appid: \(appid)")
         
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
-//            kSecAttrService as String: Keychain.service,
-            kSecAttrService as String: "\(Keychain.service)_faxNumber",
+          kSecAttrService as String: "\(Keychain.service)_faxNumber",
             kSecAttrAccount as String: appid,
             kSecMatchLimit as String: kSecMatchLimitOne,
             kSecReturnData as String: kCFBooleanTrue!
@@ -136,8 +133,6 @@ struct Keychain {
         guard status == errSecSuccess else {
             if status == errSecItemNotFound {
                 print("No fax number found for the given appid")
-                print("appid: \(appid)")
-                print("fax number: \(Keychain.service)_faxNumber")
                 return nil
             } else {
                 print("Unhandled Keychain error: \(status)")

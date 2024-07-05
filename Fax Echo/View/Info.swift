@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// For Info tabView
 struct Info: View {
     var body: some View {
         Text("Information")

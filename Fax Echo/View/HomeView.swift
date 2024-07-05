@@ -33,7 +33,6 @@ struct HomeViewWithTabs: View {
             Dashboard(authManager: authManager, localCredential: localCredential)
                 .tabItem {
                     Label("Dashboard", systemImage: "house.fill" )
-                    let _ = print("appid passed to Dashboar() @HomeViewWithTabs(): \(localCredential.appid)")
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(Color.mint
@@ -65,7 +64,7 @@ struct HomeViewWithTabs: View {
     }
 }
 
-#Preview {
-
-    HomeView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
-}
+//#Preview {
+//
+//    HomeView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
+//}
