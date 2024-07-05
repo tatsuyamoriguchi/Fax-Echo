@@ -117,6 +117,7 @@
 		8C50E0C62C346CF8007BE419 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A12C346CF8007BE419 /* README.txt */; };
 		8C50E0C82C347B54007BE419 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
 		8C50E0C92C347B55007BE419 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
+		8CE9317C2C38873B0067D1C3 /* LocalCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9317B2C38873B0067D1C3 /* LocalCredential.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		8C50E0A02C346CF8007BE419 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		8C50E0A12C346CF8007BE419 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		8C50E0C72C346D6D007BE419 /* Fax-Echo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fax-Echo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8CE9317B2C38873B0067D1C3 /* LocalCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredential.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 				8C2285C62C33CD560011BE64 /* SwipeMenu.swift */,
 				8C2285C72C33CD560011BE64 /* SwipeSettings.swift */,
 				8C2285C82C33CD560011BE64 /* Token.swift */,
+				8CE9317B2C38873B0067D1C3 /* LocalCredential.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				8C2286232C33CDA50011BE64 /* TokenViewModel.swift in Sources */,
 				8C2285D62C33CD560011BE64 /* SwipeSettings.swift in Sources */,
 				8C2286032C33CD6F0011BE64 /* Settings.swift in Sources */,
+				8CE9317C2C38873B0067D1C3 /* LocalCredential.swift in Sources */,
 				8C22861A2C33CDA50011BE64 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

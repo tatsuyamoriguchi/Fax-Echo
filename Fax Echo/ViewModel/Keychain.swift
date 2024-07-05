@@ -85,6 +85,7 @@ struct Keychain {
     }
     
     func retrieveApikey(appid: String) throws -> String? {
+        
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: Keychain.service,
@@ -118,6 +119,8 @@ struct Keychain {
     }
 
     func retrieveMyFaxNumber(appid: String) throws -> String? {
+        print("parameter appid: \(appid)")
+        
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
 //            kSecAttrService as String: Keychain.service,

@@ -63,6 +63,7 @@ struct FaxRowView: View {
 
 struct Dashboard: View {
     @ObservedObject var authManager: AuthenticationManager
+    @ObservedObject var localCredential: LocalCredential
     
     @StateObject private var multipleReceivedFaxes = MultipleReceivedFaxes()
     var dateTimeFormatter = DateTimeFormatter()
@@ -82,8 +83,9 @@ struct Dashboard: View {
     
     var myFaxNumber: String {
         do {
-            let faxNumberRegistered = try Keychain().retrieveMyFaxNumber(appid: authManager.appid)
-            print("authManager.appid: \(authManager.appid)")
+            let faxNumberRegistered = try Keychain().retrieveMyFaxNumber(appid: localCredential.appid)
+            print("authManager.appid @var myFaxNumber: \(authManager.appid)")
+            print("localCredential.appid @var myFaxNumber: \(localCredential.appid)")
             return faxNumberRegistered ?? "No Fax Number Registered"
         } catch {
             print("Unable to obtain myFaxNumber: \(error)")
@@ -93,6 +95,8 @@ struct Dashboard: View {
     
     var body: some View {
         
+        let _ = print("appid passed to Dashboad(): \(localCredential.appid)")
+
         NavigationStack {
             
             List {
@@ -217,8 +221,9 @@ struct Dashboard: View {
     
 }
 
-#Preview {
-    Dashboard(authManager: AuthenticationManager())
-        .modelContainer(for: ReplyStatus.self, inMemory: true)
-    
-}
+//#Preview {
+//
+//    Dashboard(authManager: AuthenticationManager(), appid: "abcd", apikey: "12345", userid: "OneTwoThree")
+//        .modelContainer(for: ReplyStatus.self, inMemory: true)
+//    
+//}

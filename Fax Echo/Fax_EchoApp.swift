@@ -10,7 +10,10 @@ import SwiftData
 
 @main
 struct Fax_EchoApp: App {
+    
+    @StateObject var localCredential = LocalCredential(appid: "", apikey: "", userid: "")
     @StateObject var authManager = AuthenticationManager()
+
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -30,7 +33,7 @@ struct Fax_EchoApp: App {
             Group {
 
 //                if authManager.isLoggedIn == true {
-                    ContentView(authManager: authManager)
+                ContentView(authManager: authManager, localCredential: localCredential)
                         .modelContainer(sharedModelContainer)
 //                } else {
 //                    Login(authManager: authManager)

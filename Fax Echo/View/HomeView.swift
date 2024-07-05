@@ -9,29 +9,31 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var authManager: AuthenticationManager
-
+    @ObservedObject var localCredential: LocalCredential
+    
+    
     var body: some View {
         
-        Group {
+        if authManager.isLoggedIn {
+            HomeViewWithTabs(authManager: authManager, localCredential: localCredential)
             
-            if authManager.isLoggedIn {
-                HomeViewWithTabs(authManager: authManager)
-            } else {
-                Login(authManager: authManager, appid: authManager.appid, apikey: authManager.apikey, userid: authManager.userid)
-            }
-            
+        } else {
+            Login(authManager: authManager, localCredential: localCredential)
         }
+        
     }
 }
 
 struct HomeViewWithTabs: View {
     @ObservedObject var authManager: AuthenticationManager
+    @ObservedObject var localCredential: LocalCredential
 
     var body: some View {
         TabView {
-            Dashboard(authManager: AuthenticationManager())
+            Dashboard(authManager: authManager, localCredential: localCredential)
                 .tabItem {
                     Label("Dashboard", systemImage: "house.fill" )
+                    let _ = print("appid passed to Dashboar() @HomeViewWithTabs(): \(localCredential.appid)")
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(Color.mint
@@ -64,5 +66,6 @@ struct HomeViewWithTabs: View {
 }
 
 #Preview {
-    HomeView(authManager: AuthenticationManager())
+
+    HomeView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
 }

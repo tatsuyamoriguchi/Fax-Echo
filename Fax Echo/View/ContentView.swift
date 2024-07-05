@@ -10,21 +10,26 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject var authManager: AuthenticationManager
+    @ObservedObject var localCredential: LocalCredential
+
     
     var body: some View {
         
         Group {
             
             if authManager.isLoggedIn == true {
-                HomeView(authManager: authManager)
+                HomeView(authManager: authManager, localCredential: localCredential)
+                
+                let _ = print("appid from ContantView() to HomeView(): \(localCredential.appid)")
             } else {
-                Login(authManager: authManager, appid: authManager.appid, apikey: authManager.apikey, userid: authManager.userid)
+                Login(authManager: authManager, localCredential: localCredential)
             }
             
         }
     }
 }
 
-#Preview {
-    ContentView(authManager: AuthenticationManager())
-}
+//#Preview {
+//
+//    ContentView(authManager: AuthenticationManager(), appid: "123", apikey: "abc", userid: "onetwothree")
+//}
