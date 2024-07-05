@@ -198,10 +198,10 @@ struct Dashboard: View {
     
     private func fetchFaxes() {
         
-        authManager.getToken(appid: authManager.appid, apikey: authManager.apikey) { token in
+        authManager.getToken(appid: localCredential.appid, apikey: localCredential.apikey) { token in
             if let token = token {
                 print("Token fetched from fetchFaxes(): \(token)")
-                multipleReceivedFaxes.getFaxes(token: token, userid: authManager.userid)
+                multipleReceivedFaxes.getFaxes(token: token, userid: localCredential.userid)
             } else {
                 print("Failed to fetch token at fetchFaxes()")
             }

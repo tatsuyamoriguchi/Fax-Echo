@@ -44,10 +44,25 @@ struct Login: View {
                     .autocapitalization(.none)
                     .scrollContentBackground(.hidden)
                     .textFieldStyle()
+                    .onSubmit {
+                        if !localCredential.apikey.isEmpty {
+                            authManager.apikey = localCredential.apikey
+                            print("localCredential.apikey: \(localCredential.apikey)")
+                            print("authManager.apikey @Login: \(authManager.apikey)")
+                        }
+                    }
                 
                 TextField("Enter your user-id", text: $localCredential.userid)
                     .focused($useridFieldIsFocused)
                     .textFieldStyle()
+                    .onSubmit() {
+                        if !localCredential.userid.isEmpty {
+                            authManager.userid = localCredential.userid
+                            print("localCredential.userid: \(localCredential.userid)")
+                            print("authManager.userid @Login: \(authManager.userid)")
+ 
+                        }
+                    }
                 
                 Spacer()
                 

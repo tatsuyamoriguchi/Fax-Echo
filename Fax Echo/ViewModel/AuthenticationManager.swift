@@ -75,7 +75,7 @@ class AuthenticationManager: ObservableObject {
                   }
 
               } else {
-                  // Display a pop up sheet to a user that somthing wrong with your barer token, and contact your Fax Corporate Admninistrator.
+                  // Display a pop up sheet to a user that somthing wrong with your bearer token, and contact your Fax Corporate Admninistrator.
                   // Invoke userid to send to registered Fax Corporate Administrator
                   print("Error from getToken(): \(String(describing: error?.localizedDescription))")
                   completion(nil)
