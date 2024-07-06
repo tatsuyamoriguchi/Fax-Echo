@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct Registration: View {
+    @State private var email: String = ""
+    @State private var password: String = ""
     @State private var appid: String = ""
     @State private var apikey: String = ""
     @State private var userid: String = ""
     @State private var faxNumber: String = ""
     
-    @State private var message = "Obtain your APP ID, API KEY, and USER ID from your Fax Corporate Admninistrator and enter them below"
+    @State private var message = "Obtain your APP ID, API KEY, USER ID, FAX NUMBER from your Fax service admninistrator and enter them below"
     
     @Environment(\.presentationMode) var presentationMode
     @FocusState private var useridFieldIsFocused: Bool
@@ -29,6 +31,11 @@ struct Registration: View {
                 
             }
             Spacer()
+            TextField("eMail", text: $email)
+                .textFieldStyle()
+            TextField("Password", text: $password)
+                .textFieldStyle()
+            Spacer()
             TextField("APP ID", text: $appid)
                 .textFieldStyle()
             TextField("API KEY", text: $apikey)
@@ -37,6 +44,8 @@ struct Registration: View {
                 .textFieldStyle()
             TextField("FAX Number", text: $faxNumber)
                 .textFieldStyle()
+            Spacer()
+            
             Button("Register") {
                 print("Register Tapped")
                 if Keychain.doesAnyUserExist() == true {
@@ -49,7 +58,7 @@ struct Registration: View {
                     
                 } else {
                     // Perform registration action
-                    registrationAction(appidGiven: appid, apikeyGiven: apikey, useridGiven: userid, faxNumberGiven: faxNumber)
+                    registrationAction(emailGiven: email, passwordGiven: password, appidGiven: appid, apikeyGiven: apikey, useridGiven: userid, faxNumberGiven: faxNumber)
                     
                 }
             }
@@ -63,9 +72,9 @@ struct Registration: View {
 
 extension Registration {
     
-    func registrationAction(appidGiven: String, apikeyGiven: String, useridGiven: String, faxNumberGiven: String) {
+    func registrationAction(emailGiven: String, passwordGiven: String, appidGiven: String, apikeyGiven: String, useridGiven: String, faxNumberGiven: String) {
         
-        let isValid = authManager.register(appid: appidGiven, apikey: apikeyGiven, userid: useridGiven, faxNumber: faxNumberGiven)
+        let isValid = authManager.register(email: emailGiven, password: passwordGiven, appid: appidGiven, apikey: apikeyGiven, userid: useridGiven, faxNumber: faxNumberGiven)
         print(isValid)
         
         if isValid == true {

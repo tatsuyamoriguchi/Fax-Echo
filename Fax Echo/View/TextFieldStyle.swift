@@ -12,12 +12,12 @@ extension View {
     func textFieldStyle() -> some View {
         self.frame(minWidth: 250)
             .fixedSize(horizontal: true, vertical: false)
-        
+            .cornerRadius(10)
+            .border(.gray)
+            .foregroundColor(.black)
+            .background(Color.white)
             .textInputAutocapitalization(.never)
             .disableAutocorrection(true)
-            .background(Color.white)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-//                        .background(RoundedRectangle(cornerRadius: 20).fill(Color(red: 237/255, green: 237/255, blue: 237/255)))
 
 
     }

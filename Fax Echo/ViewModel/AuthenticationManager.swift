@@ -18,12 +18,12 @@ class AuthenticationManager: ObservableObject {
     @Published var userid: String = ""
         
     
-    func register(appid: String, apikey: String, userid: String, faxNumber: String) -> Bool {
+    func register(email: String, password: String, appid: String, apikey: String, userid: String, faxNumber: String) -> Bool {
         
         do {
-            try Keychain.save(appid: appid, apikey: apikey, userid: userid, faxNumber: faxNumber)
+            try Keychain.save(email: email, password: password, appid: appid, apikey: apikey, userid: userid, faxNumber: faxNumber)
             self.isLoggedIn = true
-            print("User registered with appid: \(appid), apikey: \(apikey), userid: \(userid), and faxNumber: \(faxNumber)")
+            print("User registered with email: \(email), password: \(password), appid: \(appid), apikey: \(apikey), userid: \(userid), and faxNumber: \(faxNumber)")
         } catch {
             self.isLoggedIn = false
             print("Error saving user credentials: \(error.localizedDescription)")

@@ -23,7 +23,7 @@ struct Login: View {
             VStack {
                 Spacer()
                 Text("Fax Echo")
-                    .font(.custom("Inter-ExtraLight",size: 60))
+                    .font(.custom("Inter-Thin",size: 60))
                 Text("ver 1.0")
                     .font(.caption)
                 Spacer()
