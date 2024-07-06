@@ -116,7 +116,7 @@ struct Login: View {
     }
 }
 
-//#Preview {
-//    
-//    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "123", apikey: "abc", userid: "OneTwoThree"))
-//}
+#Preview {
+    
+    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "123", apikey: "abc", userid: "OneTwoThree"))
+}

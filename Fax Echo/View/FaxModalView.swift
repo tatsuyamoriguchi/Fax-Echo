@@ -122,11 +122,11 @@ struct FaxModalView: View {
 
 
 
-//#Preview {
-//    @State var isPresented = true
-//    let newDataToAdd = ReplyStatus(fax_id: "fax_id123", replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
-//
-//    @State var status = newDataToAdd
-//    
-//    return FaxModalView(isFaxPresented: $isPresented, fax: DemoData().demoFax, status: $status)
-//}
+#Preview {
+    @State var isPresented = true
+    let newDataToAdd = ReplyStatus(fax_id: "fax_id123", replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
+
+    @State var status = newDataToAdd
+    
+    return FaxModalView(isFaxPresented: $isPresented, fax: DemoData().demoFax, status: $status)
+}

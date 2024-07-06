@@ -28,7 +28,7 @@ struct ContentView: View {
     }
 }
 
-//#Preview {
-//
-//    ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
-//}
+#Preview {
+
+    ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
+}

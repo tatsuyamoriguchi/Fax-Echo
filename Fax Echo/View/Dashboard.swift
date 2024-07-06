@@ -218,9 +218,13 @@ struct Dashboard: View {
     
 }
 
-//#Preview {
-//
-//    Dashboard(authManager: AuthenticationManager(), appid: "abcd", apikey: "12345", userid: "OneTwoThree")
-//        .modelContainer(for: ReplyStatus.self, inMemory: true)
-//    
-//}
+#Preview {
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: ReplyStatus.self, configurations: config)
+    let authManager = AuthenticationManager()
+    let localCredential = LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree")
+//    let replyStatus = ReplyStatus(fax_id: "faxid12345", replyMethod: ReplyMethodEnum.fax, replyStatusResult: ReplyStatusResultEnum.completed, replyFaxID: "ReplyFaxID1234456789", replyTimeStamp: Date())
+
+    return Dashboard(authManager: authManager, localCredential: localCredential)
+        .modelContainer(container)
+}

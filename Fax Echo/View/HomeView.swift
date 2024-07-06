@@ -64,7 +64,7 @@ struct HomeViewWithTabs: View {
     }
 }
 
-//#Preview {
-//
-//    HomeView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
-//}
+#Preview {
+
+    HomeView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
+}
