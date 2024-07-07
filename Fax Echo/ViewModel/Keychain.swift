@@ -24,7 +24,7 @@ struct Keychain {
     static let service = "FaxEcho"
     
     // Function to check if a user account already exists in Keychain
-    // change to check if entered email address exists in Keychain in Registration()
+    // Change func doesAnyUserExist() to check if entered email address exists in Keychain in Registration()
     static func doesAnyUserExist() -> Bool {
         // Define query parameters
         let query: [String: Any] = [
@@ -126,7 +126,7 @@ struct Keychain {
             ]
         
         // Keychain query for appid
-            let appidQuery: [String: Any] = [
+        let appidQuery: [String: Any] = [
                 kSecClass as String: kSecClassGenericPassword,
                 kSecAttrService as String: "\(service)_appid",
                 kSecAttrAccount as String: email,

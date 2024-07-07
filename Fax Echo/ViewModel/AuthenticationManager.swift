@@ -21,7 +21,10 @@ class AuthenticationManager: ObservableObject {
     func register(email: String, password: String, appid: String, apikey: String, userid: String, faxNumber: String) -> Bool {
         
         do {
-            try Keychain.save(email: email, password: password, appid: appid, apikey: apikey, userid: userid, faxNumber: faxNumber)
+            let userCredentials = UserCredentials(email: email, password: password, appid: appid, apikey: apikey, userid: userid, faxNumber: faxNumber)
+            try Keychain.saveUserCredentials(userCredentials)
+            
+//            try Keychain.save(email: email, password: password, appid: appid, apikey: apikey, userid: userid, faxNumber: faxNumber)
             self.isLoggedIn = true
             print("User registered with email: \(email), password: \(password), appid: \(appid), apikey: \(apikey), userid: \(userid), and faxNumber: \(faxNumber)")
         } catch {
