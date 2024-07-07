@@ -10,16 +10,19 @@ import SwiftUI
 
 extension View {
     func textFieldStyle() -> some View {
-        self.frame(minWidth: 250)
-            .fixedSize(horizontal: true, vertical: false)
-            .cornerRadius(10)
-            .border(.gray)
-            .foregroundColor(.black)
+        
+        self
+            .padding(.horizontal, 10)
+            .padding(.vertical,5)
+//            .background(Color.gray.opacity(0.1))
             .background(Color.white)
+            .cornerRadius(10)
+            .frame(minWidth: 250, minHeight: 40)
+            .fixedSize(horizontal: true, vertical: false)
+            .foregroundColor(.black)
             .textInputAutocapitalization(.never)
             .disableAutocorrection(true)
-
-
+            .padding(.horizontal)
     }
     
     func credentialFieldStyle() -> some View {

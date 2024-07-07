@@ -23,14 +23,13 @@ struct Registration: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            HStack {
-                Spacer(minLength: 50)
-                Text(message)
-                Spacer(minLength: 50)
-                
-            }
-            Spacer()
+            Text(message)
+                .foregroundStyle(Color.white)
+                .multilineTextAlignment(.leading)
+                .frame(minWidth: 350)
+                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                .padding()
+
             TextField("eMail", text: $email)
                 .textFieldStyle()
             TextField("Password", text: $password)
@@ -44,7 +43,6 @@ struct Registration: View {
                 .textFieldStyle()
             TextField("FAX Number", text: $faxNumber)
                 .textFieldStyle()
-            Spacer()
             
             Button("Register") {
                 print("Register Tapped")
@@ -62,12 +60,14 @@ struct Registration: View {
                     
                 }
             }
-            Spacer()
-            Spacer()
+            .foregroundStyle(Color("Button Color"))
         }
+        .padding()
+        .background(Color.mint)
         .presentationDetents([.medium])
         
     }
+
 }
 
 extension Registration {

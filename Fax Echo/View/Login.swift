@@ -106,17 +106,14 @@ struct Login: View {
                             
                             Spacer()
                         }
-                        Spacer()
-                        Spacer()
                     }
             }
             .background(Color.mint)
-            
         }
     }
 }
 
 #Preview {
     
-    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "123", apikey: "abc", userid: "OneTwoThree"))
+    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "", apikey: "", userid: ""))
 }
