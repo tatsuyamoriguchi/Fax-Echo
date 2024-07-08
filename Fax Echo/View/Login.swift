@@ -29,40 +29,61 @@ struct Login: View {
                 Spacer()
                 Image("fax-machine")
                 Spacer()
-                
-                TextField("Enter your app-id", text: $localCredential.appid)
+
+                TextField("Enter your email", text: $localCredential.email)
                     .textFieldStyle()
                     .onSubmit {
-                        if !localCredential.appid.isEmpty {
+                        if !localCredential.email.isEmpty {
                             authManager.appid = localCredential.appid
-                            print("localCredential.appid: \(localCredential.appid)")
+                            print("localCredential.email: \(localCredential.email)")
                             print("authManager.appid @Login: \(authManager.appid)")
                         }
                     }
-                TextField("Enter an api-key", text: $localCredential.apikey)
-                    .autocorrectionDisabled(true)
-                    .autocapitalization(.none)
-                    .scrollContentBackground(.hidden)
+                
+                TextField("Enter your password", text: $localCredential.password)
                     .textFieldStyle()
                     .onSubmit {
-                        if !localCredential.apikey.isEmpty {
-                            authManager.apikey = localCredential.apikey
-                            print("localCredential.apikey: \(localCredential.apikey)")
+                        if !localCredential.password.isEmpty {
+                            authManager.appid = localCredential.password
+                            print("localCredential.password: \(localCredential.password)")
                             print("authManager.apikey @Login: \(authManager.apikey)")
                         }
                     }
-                
-                TextField("Enter your user-id", text: $localCredential.userid)
-                    .focused($useridFieldIsFocused)
-                    .textFieldStyle()
-                    .onSubmit() {
-                        if !localCredential.userid.isEmpty {
-                            authManager.userid = localCredential.userid
-                            print("localCredential.userid: \(localCredential.userid)")
-                            print("authManager.userid @Login: \(authManager.userid)")
- 
-                        }
-                    }
+
+
+//                TextField("Enter your app-id", text: $localCredential.appid)
+//                    .textFieldStyle()
+//                    .onSubmit {
+//                        if !localCredential.appid.isEmpty {
+//                            authManager.appid = localCredential.appid
+//                            print("localCredential.appid: \(localCredential.appid)")
+//                            print("authManager.appid @Login: \(authManager.appid)")
+//                        }
+//                    }
+//                TextField("Enter an api-key", text: $localCredential.apikey)
+//                    .autocorrectionDisabled(true)
+//                    .autocapitalization(.none)
+//                    .scrollContentBackground(.hidden)
+//                    .textFieldStyle()
+//                    .onSubmit {
+//                        if !localCredential.apikey.isEmpty {
+//                            authManager.apikey = localCredential.apikey
+//                            print("localCredential.apikey: \(localCredential.apikey)")
+//                            print("authManager.apikey @Login: \(authManager.apikey)")
+//                        }
+//                    }
+//                
+//                TextField("Enter your user-id", text: $localCredential.userid)
+//                    .focused($useridFieldIsFocused)
+//                    .textFieldStyle()
+//                    .onSubmit() {
+//                        if !localCredential.userid.isEmpty {
+//                            authManager.userid = localCredential.userid
+//                            print("localCredential.userid: \(localCredential.userid)")
+//                            print("authManager.userid @Login: \(authManager.userid)")
+// 
+//                        }
+//                    }
                 
                 Spacer()
                 
@@ -77,6 +98,11 @@ struct Login: View {
                                 // Locally authenticate user's credentials first with appid and apikey.
                                 
                                 do {
+                                    
+                                    // let retrievedCredentials = try retrieveUserCredentials(email: email)
+                                    // print(retrievedCredentials)
+//                                    let apikeyRegistered = try Keychain().retrieveUserCredentials(appid: localCredential.appid)
+
                                     let apikeyRegistered = try Keychain().retrieveApikey(appid: localCredential.appid)
                                     
                                     if apikeyRegistered == localCredential.apikey {
@@ -115,5 +141,5 @@ struct Login: View {
 
 #Preview {
     
-    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "", apikey: "", userid: ""))
+    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "", password: "", appid: "", apikey: "", userid: ""))
 }

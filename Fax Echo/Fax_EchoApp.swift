@@ -11,7 +11,7 @@ import SwiftData
 @main
 struct Fax_EchoApp: App {
     
-    @StateObject var localCredential = LocalCredential(appid: "", apikey: "", userid: "")
+    @StateObject var localCredential = LocalCredential(email: "", password: "", appid: "", apikey: "", userid: "")
     @StateObject var authManager = AuthenticationManager()
 
     

@@ -83,10 +83,10 @@ struct Dashboard: View {
     
     var myFaxNumber: String {
         do {
-            let faxNumberRegistered = try Keychain().retrieveMyFaxNumber(appid: localCredential.appid)
-            print("authManager.appid @var myFaxNumber: \(authManager.appid)")
-            print("localCredential.appid @var myFaxNumber: \(localCredential.appid)")
-            return faxNumberRegistered ?? "No Fax Number Registered"
+            let faxNumberRegistered = try Keychain.retrieveUserCredentials(email: localCredential.email).faxNumber
+            
+            print("localCredential.email @var myFaxNumber: \(localCredential.email)")
+            return faxNumberRegistered
         } catch {
             print("Unable to obtain myFaxNumber: \(error)")
             return "No Fax Number Registered"
@@ -222,7 +222,7 @@ struct Dashboard: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: ReplyStatus.self, configurations: config)
     let authManager = AuthenticationManager()
-    let localCredential = LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree")
+    let localCredential = LocalCredential(email: "brian@beckos.com", password: "kanda123", appid: "1234", apikey: "abcd", userid: "OneTwoThree")
 //    let replyStatus = ReplyStatus(fax_id: "faxid12345", replyMethod: ReplyMethodEnum.fax, replyStatusResult: ReplyStatusResultEnum.completed, replyFaxID: "ReplyFaxID1234456789", replyTimeStamp: Date())
 
     return Dashboard(authManager: authManager, localCredential: localCredential)

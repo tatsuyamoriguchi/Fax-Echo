@@ -30,5 +30,5 @@ struct ContentView: View {
 
 #Preview {
 
-    ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
+    ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "brian@beckos.com", password: "kanda123", appid: "1234", apikey: "abcd", userid: "OneTwoThree"))
 }
