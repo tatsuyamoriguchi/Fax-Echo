@@ -17,6 +17,9 @@ struct Login: View {
     
     @ObservedObject var localCredential: LocalCredential
     
+    @State private var email: String = ""
+    @State private var password: String = ""
+    
     var body: some View {
         NavigationView {
             
@@ -30,25 +33,27 @@ struct Login: View {
                 Image("fax-machine")
                 Spacer()
 
-                TextField("Enter your email", text: $localCredential.email)
+                TextField("Enter your email", text: $email)
                     .textFieldStyle()
-                    .onSubmit {
-                        if !localCredential.email.isEmpty {
-                            authManager.appid = localCredential.appid
-                            print("localCredential.email: \(localCredential.email)")
-                            print("authManager.appid @Login: \(authManager.appid)")
-                        }
-                    }
+//                    .onSubmit {
+//                        if !email.isEmpty && localCredential.email == email {
+//
+//                            authManager.appid = localCredential.appid
+//                            print("localCredential.email: \(localCredential.email)")
+//                            print("authManager.appid @Login: \(authManager.appid)")
+//                        }
+//                    }
                 
-                TextField("Enter your password", text: $localCredential.password)
+                TextField("Enter your password", text: $password)
                     .textFieldStyle()
-                    .onSubmit {
-                        if !localCredential.password.isEmpty {
-                            authManager.appid = localCredential.password
-                            print("localCredential.password: \(localCredential.password)")
-                            print("authManager.apikey @Login: \(authManager.apikey)")
-                        }
-                    }
+//                    .onSubmit {
+//                        if !password.isEmpty && localCredential.password == password {
+//                            authManager.apikey = localCredential.apikey
+//                            print("localCredential.password: \(localCredential.password)")
+//                            print("authManager.apikey @Login: \(authManager.apikey)")
+//                        }
+//                    }
+                // What about userid??
 
 
 //                TextField("Enter your app-id", text: $localCredential.appid)
@@ -95,14 +100,23 @@ struct Login: View {
                             Spacer()
                             
                             Button("Login") {
+                                // check if all credential info are input
+                                if !email.isEmpty && !password.isEmpty && localCredential.email == email && localCredential.password == password {
+                                    //                            authManager.appid = localCredential.appid
+                                } else {
+                                    print("The credential input doesn't match with the registered record.")
+                                }
+
+                                    
                                 // Locally authenticate user's credentials first with appid and apikey.
-                                
                                 do {
                                     
                                     // let retrievedCredentials = try retrieveUserCredentials(email: email)
                                     // print(retrievedCredentials)
 //                                    let apikeyRegistered = try Keychain().retrieveUserCredentials(appid: localCredential.appid)
 
+                                    // what about appid to pass? -> As long as email and password are matched,
+                                    // appid, apikey, and userid are fine. Pass them to localCredential
                                     let apikeyRegistered = try Keychain().retrieveApikey(appid: localCredential.appid)
                                     
                                     if apikeyRegistered == localCredential.apikey {

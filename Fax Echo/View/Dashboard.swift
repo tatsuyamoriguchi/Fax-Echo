@@ -222,7 +222,7 @@ struct Dashboard: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: ReplyStatus.self, configurations: config)
     let authManager = AuthenticationManager()
-    let localCredential = LocalCredential(email: "brian@beckos.com", password: "kanda123", appid: "1234", apikey: "abcd", userid: "OneTwoThree")
+    let localCredential = LocalCredential(email: "briaasfn@beckasfasos.com", password: "kakakaka", appid: "1234", apikey: "abcd", userid: "OneTwoThree")
 //    let replyStatus = ReplyStatus(fax_id: "faxid12345", replyMethod: ReplyMethodEnum.fax, replyStatusResult: ReplyStatusResultEnum.completed, replyFaxID: "ReplyFaxID1234456789", replyTimeStamp: Date())
 
     return Dashboard(authManager: authManager, localCredential: localCredential)
