@@ -75,8 +75,15 @@ struct Dashboard: View {
     @Environment(\.modelContext) private var modelContext
     @Query var replyStatuses: [ReplyStatus]
     
+    let demoData = DemoData()
+    
     var groupedFaxes: [String: [Fax]] {
-        Dictionary(grouping: multipleReceivedFaxes.faxes, by: { fax in
+        if multipleReceivedFaxes.faxes.count == 0 {
+            multipleReceivedFaxes.faxes = demoData.demoFaxes
+        }
+
+        
+        return Dictionary(grouping: multipleReceivedFaxes.faxes, by: { fax in
             dateTimeFormatter.formattedDateOnly(from: fax.completed_timestamp)
         })
     }
@@ -92,6 +99,8 @@ struct Dashboard: View {
             return "No Fax Number Registered"
         }
     }
+    
+    
     
     var body: some View {
         
@@ -197,6 +206,9 @@ struct Dashboard: View {
     private func fetchFaxes() {
         
         authManager.getToken(appid: localCredential.appid, apikey: localCredential.apikey) { token in
+            print("localCredential.appid @func fetchFaxes(): \(localCredential.appid)")
+            print("localCredential.apikey @func fetchFaxes(): \(localCredential.apikey)")
+
             if let token = token {
                 multipleReceivedFaxes.getFaxes(token: token, userid: localCredential.userid)
             } else {
@@ -222,7 +234,7 @@ struct Dashboard: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: ReplyStatus.self, configurations: config)
     let authManager = AuthenticationManager()
-    let localCredential = LocalCredential(email: "briaasfn@beckasfasos.com", password: "kakakaka", appid: "1234", apikey: "abcd", userid: "OneTwoThree")
+    let localCredential = LocalCredential(email: "briaasfn@beckasfasos.com", password: "kakakaka", appid: "1234", apikey: "abcd", userid: "OneTwoThree", faxNumber: "123-123-1234")
 //    let replyStatus = ReplyStatus(fax_id: "faxid12345", replyMethod: ReplyMethodEnum.fax, replyStatusResult: ReplyStatusResultEnum.completed, replyFaxID: "ReplyFaxID1234456789", replyTimeStamp: Date())
 
     return Dashboard(authManager: authManager, localCredential: localCredential)

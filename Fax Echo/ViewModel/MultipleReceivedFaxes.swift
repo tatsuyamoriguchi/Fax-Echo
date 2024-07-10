@@ -28,7 +28,8 @@ class MultipleReceivedFaxes: ObservableObject {
             "transaction-id": "",
             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         ]
-        
+
+ 
         // Initialize the request with the URL and settings
         request = NSMutableURLRequest(url: NSURL(string: "https://api.securedocex.com/faxes/received")! as URL,
                                       cachePolicy: .useProtocolCachePolicy,
@@ -46,7 +47,7 @@ class MultipleReceivedFaxes: ObservableObject {
                 if let error = error {
                     print("Error fetching faxes from getFaxes(): \(error)")
                 } else if let httpResponse = response as? HTTPURLResponse {
-                    
+                    print("httpResponse: \(httpResponse)")
                     if let data = data {
                         if let faxes = self.handleResponseData(data) {
                             DispatchQueue.main.async {

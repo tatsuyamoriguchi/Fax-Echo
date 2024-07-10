@@ -71,7 +71,7 @@ class AuthenticationManager: ObservableObject {
 
                   DispatchQueue.main.async {
                       self.token = tokenDictionary.access_token
-//                      print("Token received from getToken(): \(self.token)")
+                      print("Token received from getToken(): \(self.token)")
                       completion(self.token)
                   }
 

@@ -96,7 +96,7 @@ struct FaxModalView: View {
             
             // For Debug
             let demoData = DemoData()
-            print(demoData.demoFax.fax_id)
+            print(demoData.demoFaxes.first!.fax_id)
         }
     }
     
@@ -128,5 +128,5 @@ struct FaxModalView: View {
 
     @State var status = newDataToAdd
     
-    return FaxModalView(isFaxPresented: $isPresented, fax: DemoData().demoFax, status: $status)
+    return FaxModalView(isFaxPresented: $isPresented, fax: DemoData().demoFaxes.first!, status: $status)
 }

@@ -40,5 +40,5 @@ enum ReplyMethodEnum: String, Codable {
     case email = "envelope.fill"
     case spam = "trash.fill"
     case noAction = "archivebox.fill"
-    case noReply = "nosign"
+    case noReply = "ellipsis" // "nosign"
 }

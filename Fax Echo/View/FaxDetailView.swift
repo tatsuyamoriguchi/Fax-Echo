@@ -108,6 +108,6 @@ struct FaxDetailView: View {
 
     @State var status = newDataToAdd
 
-    return FaxDetailView(fax: DemoData().demoFax, status: $status)
+    return FaxDetailView(fax: DemoData().demoFaxes.first!, status: $status)
 }
 

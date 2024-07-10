@@ -100,9 +100,9 @@ struct Login: View {
                             Spacer()
                             
                             Button("Login") {
-                                // check if all credential info are input
-                                if !email.isEmpty && !password.isEmpty && localCredential.email == email && localCredential.password == password {
-                                    //                            authManager.appid = localCredential.appid
+                                // check if email or password is not empty
+                                if !email.isEmpty && !password.isEmpty {
+
                                 } else {
                                     print("The credential input doesn't match with the registered record.")
                                 }
@@ -111,24 +111,47 @@ struct Login: View {
                                 // Locally authenticate user's credentials first with appid and apikey.
                                 do {
                                     
-                                    // let retrievedCredentials = try retrieveUserCredentials(email: email)
-                                    // print(retrievedCredentials)
-//                                    let apikeyRegistered = try Keychain().retrieveUserCredentials(appid: localCredential.appid)
-
-                                    // what about appid to pass? -> As long as email and password are matched,
-                                    // appid, apikey, and userid are fine. Pass them to localCredential
-                                    let apikeyRegistered = try Keychain().retrieveApikey(appid: localCredential.appid)
+                                    // Retreive stored credentials with input email
+                                    let retrievedCredentials = try Keychain.retrieveUserCredentials(email: email)
                                     
-                                    if apikeyRegistered == localCredential.apikey {
-                                        authManager.isLoggedIn = true
-                                        //                                        presentationMode.wrappedValue.dismiss()
+                                    // For debug
+                                    print("-- Registered user credentials --")
+                                    print(retrievedCredentials.email)
+                                    print(retrievedCredentials.password)
+                                    print(retrievedCredentials.appid)
+                                    print(retrievedCredentials.apikey)
+                                    print(retrievedCredentials.userid)
+                                    print(retrievedCredentials.faxNumber)
+                                    print("----")
+                                    
+                                                            
+                                    if retrievedCredentials.email == email && retrievedCredentials.password == password {
+                                        localCredential.email = retrievedCredentials.email
+                                        localCredential.password = retrievedCredentials.password
+                                        localCredential.appid = retrievedCredentials.appid
+                                        localCredential.apikey = retrievedCredentials.apikey
+                                        localCredential.userid = retrievedCredentials.userid
+                                        localCredential.faxNumber = retrievedCredentials.faxNumber
                                         
+                                        authManager.isLoggedIn = true
                                     } else {
-                                        print("apikey unmatched")
+                                        print("email or password unmatched")
                                     }
                                     
+ 
+//                                    let apikeyRegistered = try Keychain().retrieveApikey(appid: retrievedCredentials.appid)
+//                                    
+//                                    
+//                                    if apikeyRegistered == localCredential.apikey {
+//                                        authManager.isLoggedIn = true
+//                                        //                                        presentationMode.wrappedValue.dismiss()
+//                                        
+//                                    } else {
+//                                        print("apikey unmatched")
+//                                    }
+                                    
                                 } catch {
-                                    print("apikeyRegistered unable to obtained.")
+                                    print("No such email, \(email) is found registered.")
                                 }
                                 
                             }
@@ -155,5 +178,5 @@ struct Login: View {
 
 #Preview {
     
-    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "", password: "", appid: "", apikey: "", userid: ""))
+    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "", password: "", appid: "", apikey: "", userid: "", faxNumber: ""))
 }
