@@ -46,16 +46,24 @@ struct FaxRowView: View {
                 Text(dateTimeFormatter.formattedTime(from: fax.completed_timestamp))
                     .font(.caption)
                 Text(fax.originating_fax_tsid)
+                    .font(.headline)
                 Text("\(fax.pages) pg")
                     .font(.caption)
-                    Image(systemName: getReplyStatus(fax.fax_id).replyMethod.rawValue)                
+                Spacer()
+            }
+            HStack {
+                Spacer()
+                Image(systemName: getReplyStatus(fax.fax_id).replyMethod.rawValue)
+                
                 
                 if currentStatus?.replyTimeStamp != nil {
                     let timeString = dateTimeFormatter.date2String(from: getReplyStatus(fax.fax_id).replyTimeStamp)
+                    Text(dateTimeFormatter.formattedDateOnly(from: timeString))
+                        .font(.caption)
                     Text(dateTimeFormatter.formattedTime(from: timeString))
                         .font(.caption)
-                    
                 }
+                
             }
         }
     }
@@ -92,7 +100,6 @@ struct Dashboard: View {
         do {
             let faxNumberRegistered = try Keychain.retrieveUserCredentials(email: localCredential.email).faxNumber
             
-            print("localCredential.email @var myFaxNumber: \(localCredential.email)")
             return faxNumberRegistered
         } catch {
             print("Unable to obtain myFaxNumber: \(error)")

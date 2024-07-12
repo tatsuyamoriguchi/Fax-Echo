@@ -14,7 +14,6 @@ extension View {
         self
             .padding(.horizontal, 10)
             .padding(.vertical,5)
-//            .background(Color.gray.opacity(0.1))
             .background(Color.white)
             .cornerRadius(10)
             .frame(minWidth: 250, minHeight: 40)

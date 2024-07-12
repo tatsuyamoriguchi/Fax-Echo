@@ -106,141 +106,141 @@ struct Keychain {
 
     
     // Replace with func saveUserCredentials
-    static func save(email:String, password: String, appid: String, apikey: String, userid: String, faxNumber: String) throws {
-        
-        // need to change this with email and password?
-        guard let passwordData = password.data(using: .utf8),
-              let appidData = appid.data(using: .utf8),
-              let apikeyData = apikey.data(using: .utf8),
-              let useridData = userid.data(using: .utf8),
-              let faxNumberData = faxNumber.data(using: .utf8) else {
-            throw KeychainError.dataConversionError
-        }
-        
-        // Keychain query for password
-        let passwordQuery: [String: Any] = [
-                kSecClass as String: kSecClassGenericPassword,
-                kSecAttrService as String: "\(service)_password",
-                kSecAttrAccount as String: email,
-                kSecValueData as String: passwordData
-            ]
-        
-        // Keychain query for appid
-        let appidQuery: [String: Any] = [
-                kSecClass as String: kSecClassGenericPassword,
-                kSecAttrService as String: "\(service)_appid",
-                kSecAttrAccount as String: email,
-                kSecValueData as String: appidData
-            ]
-        
-         let apikeyQuery: [String:Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: email,
-            kSecValueData as String: apikeyData
-        ]
-        
-        let useridQuery: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: "\(service)_userid",
-            kSecAttrAccount as String: email,
-            kSecValueData as String: useridData
-        ]
-        
-        let faxNumberQuery: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: "\(service)_faxNumber",
-            kSecAttrAccount as String: email,
-            kSecValueData as String: faxNumberData
-        ]
-        
-        let apikeyStatus = SecItemAdd(apikeyQuery as CFDictionary, nil)
-        if apikeyStatus != errSecSuccess {
-            throw KeychainError.unhandledError(status: apikeyStatus)
-        }
-        
-        let useridStatus = SecItemAdd(useridQuery as CFDictionary, nil)
-        if useridStatus != errSecSuccess {
-            throw KeychainError.unhandledError(status: useridStatus)
-        }
-        
-        let faxNumberStatus = SecItemAdd(faxNumberQuery as CFDictionary, nil)
-        if faxNumberStatus != errSecSuccess {
-            throw KeychainError.unhandledError(status: faxNumberStatus)
-        }
-        
-    }
-    
-    // Replace with retrieveUserCredentials
-    func retrieveApikey(appid: String) throws -> String? {
-        
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: Keychain.service,
-            kSecAttrAccount as String: appid,
-            kSecMatchLimit as String: kSecMatchLimitOne,
-            kSecReturnData as String: kCFBooleanTrue!
-        ]
-        
-        var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
-        
-        guard status == errSecSuccess else {
-            if status == errSecItemNotFound {
-                print("No apikey found for the given appid")
-                return nil
-            } else {
-                throw KeychainError.unhandledError(status: status)
-            }
-        }
-        
-        guard let apikeyData = result as? Data else {
-            throw KeychainError.unexpectedDataError
-        }
-        
-        guard let apikey = String(data: apikeyData, encoding: .utf8) else {
-            throw KeychainError.dataConversionError
-        }
-        
-        return apikey
-    }
-    
-    // Replace with retrieveUserCredentials
-    func retrieveMyFaxNumber(appid: String) throws -> String? {
-        
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: "\(Keychain.service)_faxNumber",
-            kSecAttrAccount as String: appid,
-            kSecMatchLimit as String: kSecMatchLimitOne,
-            kSecReturnData as String: kCFBooleanTrue!
-        ]
-        
-        var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
-        
-        guard status == errSecSuccess else {
-            if status == errSecItemNotFound {
-                print("No fax number found for the given appid")
-                return nil
-            } else {
-                print("Unhandled Keychain error: \(status)")
-                throw KeychainError.unhandledError(status: status)
-            }
-        }
-        
-        guard let faxNumberData = result as? Data else {
-            print("Unexpected data error")
-            throw KeychainError.unexpectedDataError
-        }
-        
-        guard let faxNumber = String(data: faxNumberData, encoding: .utf8) else {
-            print("Data conversion error")
-            throw KeychainError.dataConversionError
-        }
-        
-        return faxNumber
-    }
+//    static func save(email:String, password: String, appid: String, apikey: String, userid: String, faxNumber: String) throws {
+//        
+//        // need to change this with email and password?
+//        guard let passwordData = password.data(using: .utf8),
+//              let appidData = appid.data(using: .utf8),
+//              let apikeyData = apikey.data(using: .utf8),
+//              let useridData = userid.data(using: .utf8),
+//              let faxNumberData = faxNumber.data(using: .utf8) else {
+//            throw KeychainError.dataConversionError
+//        }
+//        
+//        // Keychain query for password
+//        let passwordQuery: [String: Any] = [
+//                kSecClass as String: kSecClassGenericPassword,
+//                kSecAttrService as String: "\(service)_password",
+//                kSecAttrAccount as String: email,
+//                kSecValueData as String: passwordData
+//            ]
+//        
+//        // Keychain query for appid
+//        let appidQuery: [String: Any] = [
+//                kSecClass as String: kSecClassGenericPassword,
+//                kSecAttrService as String: "\(service)_appid",
+//                kSecAttrAccount as String: email,
+//                kSecValueData as String: appidData
+//            ]
+//        
+//         let apikeyQuery: [String:Any] = [
+//            kSecClass as String: kSecClassGenericPassword,
+//            kSecAttrService as String: service,
+//            kSecAttrAccount as String: email,
+//            kSecValueData as String: apikeyData
+//        ]
+//        
+//        let useridQuery: [String: Any] = [
+//            kSecClass as String: kSecClassGenericPassword,
+//            kSecAttrService as String: "\(service)_userid",
+//            kSecAttrAccount as String: email,
+//            kSecValueData as String: useridData
+//        ]
+//        
+//        let faxNumberQuery: [String: Any] = [
+//            kSecClass as String: kSecClassGenericPassword,
+//            kSecAttrService as String: "\(service)_faxNumber",
+//            kSecAttrAccount as String: email,
+//            kSecValueData as String: faxNumberData
+//        ]
+//        
+//        let apikeyStatus = SecItemAdd(apikeyQuery as CFDictionary, nil)
+//        if apikeyStatus != errSecSuccess {
+//            throw KeychainError.unhandledError(status: apikeyStatus)
+//        }
+//        
+//        let useridStatus = SecItemAdd(useridQuery as CFDictionary, nil)
+//        if useridStatus != errSecSuccess {
+//            throw KeychainError.unhandledError(status: useridStatus)
+//        }
+//        
+//        let faxNumberStatus = SecItemAdd(faxNumberQuery as CFDictionary, nil)
+//        if faxNumberStatus != errSecSuccess {
+//            throw KeychainError.unhandledError(status: faxNumberStatus)
+//        }
+//        
+//    }
+//    
+//    // Replace with retrieveUserCredentials
+//    func retrieveApikey(appid: String) throws -> String? {
+//        
+//        let query: [String: Any] = [
+//            kSecClass as String: kSecClassGenericPassword,
+//            kSecAttrService as String: Keychain.service,
+//            kSecAttrAccount as String: appid,
+//            kSecMatchLimit as String: kSecMatchLimitOne,
+//            kSecReturnData as String: kCFBooleanTrue!
+//        ]
+//        
+//        var result: AnyObject?
+//        let status = SecItemCopyMatching(query as CFDictionary, &result)
+//        
+//        guard status == errSecSuccess else {
+//            if status == errSecItemNotFound {
+//                print("No apikey found for the given appid")
+//                return nil
+//            } else {
+//                throw KeychainError.unhandledError(status: status)
+//            }
+//        }
+//        
+//        guard let apikeyData = result as? Data else {
+//            throw KeychainError.unexpectedDataError
+//        }
+//        
+//        guard let apikey = String(data: apikeyData, encoding: .utf8) else {
+//            throw KeychainError.dataConversionError
+//        }
+//        
+//        return apikey
+//    }
+//    
+//    // Replace with retrieveUserCredentials
+//    func retrieveMyFaxNumber(appid: String) throws -> String? {
+//        
+//        let query: [String: Any] = [
+//            kSecClass as String: kSecClassGenericPassword,
+//            kSecAttrService as String: "\(Keychain.service)_faxNumber",
+//            kSecAttrAccount as String: appid,
+//            kSecMatchLimit as String: kSecMatchLimitOne,
+//            kSecReturnData as String: kCFBooleanTrue!
+//        ]
+//        
+//        var result: AnyObject?
+//        let status = SecItemCopyMatching(query as CFDictionary, &result)
+//        
+//        guard status == errSecSuccess else {
+//            if status == errSecItemNotFound {
+//                print("No fax number found for the given appid")
+//                return nil
+//            } else {
+//                print("Unhandled Keychain error: \(status)")
+//                throw KeychainError.unhandledError(status: status)
+//            }
+//        }
+//        
+//        guard let faxNumberData = result as? Data else {
+//            print("Unexpected data error")
+//            throw KeychainError.unexpectedDataError
+//        }
+//        
+//        guard let faxNumber = String(data: faxNumberData, encoding: .utf8) else {
+//            print("Data conversion error")
+//            throw KeychainError.dataConversionError
+//        }
+//        
+//        return faxNumber
+//    }
 }
 
 
