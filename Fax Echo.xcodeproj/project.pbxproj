@@ -221,9 +221,6 @@
 			children = (
 				8C50E0A22C346CF8007BE419 /* Inter */,
 				8C50E0C72C346D6D007BE419 /* Fax-Echo-Info.plist */,
-				8C50E0992C346CF8007BE419 /* Inter-Light.ttf */,
-				8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */,
-				8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */,
 				8C2286262C33CDC60011BE64 /* Fax_EchoApp.swift */,
 				8C2285C92C33CD560011BE64 /* Model */,
 				8C2285E72C33CD6F0011BE64 /* View */,
@@ -312,6 +309,9 @@
 				8C50E0972C346CF8007BE419 /* Inter-ExtraBold.ttf */,
 				8C50E09A2C346CF8007BE419 /* Inter-Medium.ttf */,
 				8C50E09B2C346CF8007BE419 /* Inter-Regular.ttf */,
+				8C50E0992C346CF8007BE419 /* Inter-Light.ttf */,
+				8C50E09D2C346CF8007BE419 /* Inter-Thin.ttf */,
+				8C50E0982C346CF8007BE419 /* Inter-ExtraLight.ttf */,
 				8C50E09C2C346CF8007BE419 /* Inter-SemiBold.ttf */,
 			);
 			path = static;

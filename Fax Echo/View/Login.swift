@@ -26,7 +26,9 @@ struct Login: View {
             VStack {
                 Spacer()
                 Text("Fax Echo")
-                    .font(.custom("Inter-Thin",size: 60))
+                    .font(.custom("Inter-Light",size: 60))
+                    .foregroundStyle(Color.white)
+                
                 Text("ver 1.0")
                     .font(.caption)
                 Spacer()
@@ -155,14 +157,22 @@ struct Login: View {
                                 }
                                 
                             }
-                            .foregroundStyle(Color("Button Color"))
+                            
+                            .font(.custom("Inter-Light",size: 20))
+                            .foregroundStyle(Color.white)
+                            .background(Color.teal)
+                            .cornerRadius(5)
+//                            .border(.white)
                             
                             Spacer()
                             
                             Button("Register") {
                                 showRegistration.toggle()
                             }
-                            .foregroundStyle(Color("Button Color"))
+                            .font(.custom("Inter-Light",size: 20))
+                            .foregroundStyle(Color.white)
+                            .background(Color.teal)
+                            .cornerRadius(5)
                             .sheet(isPresented: $showRegistration) {
                                 Registration()
                             }
