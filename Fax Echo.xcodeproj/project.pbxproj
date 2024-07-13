@@ -260,13 +260,13 @@
 			isa = PBXGroup;
 			children = (
 				8C2285C32C33CD560011BE64 /* DemoData.swift */,
+				8C3963BC2C41B0D50082910F /* DemoSendFaxData.swift */,
 				8C2285C42C33CD560011BE64 /* Fax.swift */,
 				8C2285C52C33CD560011BE64 /* ReplyStatus.swift */,
 				8C2285C62C33CD560011BE64 /* SwipeMenu.swift */,
 				8C2285C72C33CD560011BE64 /* SwipeSettings.swift */,
 				8C2285C82C33CD560011BE64 /* Token.swift */,
 				8CE9317B2C38873B0067D1C3 /* LocalCredential.swift */,
-				8C3963BC2C41B0D50082910F /* DemoSendFaxData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

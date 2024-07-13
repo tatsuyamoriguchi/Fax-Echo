@@ -21,6 +21,8 @@ struct FaxModalView: View {
     
     @Environment(\.modelContext) private var modelContext
     
+    @ObservedObject var token: Token
+    
     private let sendFax = SendFax()
 
     var body: some View {
@@ -103,6 +105,8 @@ struct FaxModalView: View {
             // For Debug
             let demoData = DemoData()
             print("demoData fax_id@FaxModalView: \(demoData.demoFaxes.first!.fax_id)")
+            print("")
+            print("access_token: \(token.access_token)")
         }
     }
     
@@ -135,5 +139,6 @@ struct FaxModalView: View {
     @State var status = newDataToAdd
     let localCredential = LocalCredential(email: "123abc@sfsf", password: "dsalkf", appid: "aslkdfawekjfaw", apikey: "123sdfkaslf", userid: "askdfaslf", faxNumber: "81312341234")
     
-    return FaxModalView(localCredential: localCredential, isFaxPresented: $isPresented, fax: DemoData().demoFaxes.first!, status: $status)
+    let token = Token(access_token: "dummy access_token", token_type: "dummy token_type", expires_in: Date(), scope: "dummy scope", jti: "dummy jti")
+    return FaxModalView(localCredential: localCredential, isFaxPresented: $isPresented, fax: DemoData().demoFaxes.first!, status: $status, token: token)
 }

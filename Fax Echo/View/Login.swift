@@ -16,6 +16,7 @@ struct Login: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var localCredential: LocalCredential
+    @ObservedObject var token: Token
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -55,47 +56,11 @@ struct Login: View {
 //                            print("authManager.apikey @Login: \(authManager.apikey)")
 //                        }
 //                    }
-                // What about userid??
-
-
-//                TextField("Enter your app-id", text: $localCredential.appid)
-//                    .textFieldStyle()
-//                    .onSubmit {
-//                        if !localCredential.appid.isEmpty {
-//                            authManager.appid = localCredential.appid
-//                            print("localCredential.appid: \(localCredential.appid)")
-//                            print("authManager.appid @Login: \(authManager.appid)")
-//                        }
-//                    }
-//                TextField("Enter an api-key", text: $localCredential.apikey)
-//                    .autocorrectionDisabled(true)
-//                    .autocapitalization(.none)
-//                    .scrollContentBackground(.hidden)
-//                    .textFieldStyle()
-//                    .onSubmit {
-//                        if !localCredential.apikey.isEmpty {
-//                            authManager.apikey = localCredential.apikey
-//                            print("localCredential.apikey: \(localCredential.apikey)")
-//                            print("authManager.apikey @Login: \(authManager.apikey)")
-//                        }
-//                    }
-//                
-//                TextField("Enter your user-id", text: $localCredential.userid)
-//                    .focused($useridFieldIsFocused)
-//                    .textFieldStyle()
-//                    .onSubmit() {
-//                        if !localCredential.userid.isEmpty {
-//                            authManager.userid = localCredential.userid
-//                            print("localCredential.userid: \(localCredential.userid)")
-//                            print("authManager.userid @Login: \(authManager.userid)")
-// 
-//                        }
-//                    }
                 
                 Spacer()
                 
                 NavigationLink(
-                    destination: ContentView(authManager: authManager, localCredential: localCredential)
+                    destination: ContentView(authManager: authManager, localCredential: localCredential, token: token)
                 ) {
                         
                         HStack {
@@ -140,17 +105,6 @@ struct Login: View {
                                         print("email or password unmatched")
                                     }
                                     
- 
-//                                    let apikeyRegistered = try Keychain().retrieveApikey(appid: retrievedCredentials.appid)
-//                                    
-//                                    
-//                                    if apikeyRegistered == localCredential.apikey {
-//                                        authManager.isLoggedIn = true
-//                                        //                                        presentationMode.wrappedValue.dismiss()
-//                                        
-//                                    } else {
-//                                        print("apikey unmatched")
-//                                    }
                                     
                                 } catch {
                                     print("No such email, \(email) is found registered.")
@@ -187,6 +141,6 @@ struct Login: View {
 }
 
 #Preview {
-    
-    Login(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "", password: "", appid: "", apikey: "", userid: "", faxNumber: ""))
+    let token = Token(access_token: "", token_type: "", expires_in: Date(), scope: "", jti: "")
+    return Login(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "", password: "", appid: "", apikey: "", userid: "", faxNumber: ""), token: token)
 }

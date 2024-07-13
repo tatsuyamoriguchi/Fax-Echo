@@ -13,6 +13,7 @@ struct Fax_EchoApp: App {
     
     @StateObject var localCredential = LocalCredential(email: "", password: "", appid: "", apikey: "", userid: "", faxNumber: "")
     @StateObject var authManager = AuthenticationManager()
+    @StateObject var token = Token(access_token: "", token_type: "", expires_in: Date(), scope: "", jti: "")
 
     
     var sharedModelContainer: ModelContainer = {
@@ -32,7 +33,7 @@ struct Fax_EchoApp: App {
         WindowGroup {
             Group {
 
-                ContentView(authManager: authManager, localCredential: localCredential)
+                ContentView(authManager: authManager, localCredential: localCredential, token: token)
                         .modelContainer(sharedModelContainer)
             }
         }

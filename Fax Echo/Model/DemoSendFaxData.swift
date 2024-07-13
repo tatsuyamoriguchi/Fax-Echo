@@ -28,10 +28,11 @@ struct DemoSendFaxData {
         
         self.headers = [
             "user-id": userid,
-            "Authorization": "Basic " + authBase64,
             "transaction-id": "",
-            "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+            "Accept": "application/json",
+            // Encode appid:appkey in Base64
+            "Authorization": "Basic " + authBase64
         ]
         
         self.parameters = [
@@ -40,12 +41,12 @@ struct DemoSendFaxData {
                     "to_name": "Joe Bloggs",
                     "to_company": "Acme Widgets Inc.",
                     "fax_number": "18665559999"
-                ],
-                [
-                    "to_name": "Amy Winehouse",
-                    "to_company": "Acme Widgets Inc.",
-                    "fax_number": "18555444333"
-                ]
+                ]//,
+//                [
+//                    "to_name": "Amy Winehouse",
+//                    "to_company": "Acme Widgets Inc.",
+//                    "fax_number": "18555444333"
+//                ]
             ],
             "fax_options": [
                 "image_resolution": "STANDARD",

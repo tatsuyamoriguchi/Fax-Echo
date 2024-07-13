@@ -10,15 +10,15 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var authManager: AuthenticationManager
     @ObservedObject var localCredential: LocalCredential
-    
+    @ObservedObject var token: Token
     
     var body: some View {
         
         if authManager.isLoggedIn {
-            HomeViewWithTabs(authManager: authManager, localCredential: localCredential)
+            HomeViewWithTabs(authManager: authManager, localCredential: localCredential, token: token)
             
         } else {
-            Login(authManager: authManager, localCredential: localCredential)
+            Login(authManager: authManager, localCredential: localCredential, token: token)
         }
         
     }
@@ -27,10 +27,11 @@ struct HomeView: View {
 struct HomeViewWithTabs: View {
     @ObservedObject var authManager: AuthenticationManager
     @ObservedObject var localCredential: LocalCredential
+    @ObservedObject var token: Token
 
     var body: some View {
         TabView {
-            Dashboard(authManager: authManager, localCredential: localCredential)
+            Dashboard(token: token, authManager: authManager, localCredential: localCredential)
                 .tabItem {
                     Label("Dashboard", systemImage: "house.fill" )
                 }
@@ -66,7 +67,9 @@ struct HomeViewWithTabs: View {
 
 #Preview {
 
-    HomeView(authManager: AuthenticationManager(), 
+    let token: Token = Token(access_token: "", token_type: "", expires_in: Date(), scope: "", jti: "")
+    
+    return HomeView(authManager: AuthenticationManager(),
              localCredential: LocalCredential(
                 email: "briasdfan@asdkfjas.com",
                 password: "kakaka",
@@ -74,6 +77,6 @@ struct HomeViewWithTabs: View {
                 apikey: "abcd",
                 userid: "OneTwoThree",
                 faxNumber: "123-123-1234"
-             )
+             ), token: token
     )
 }

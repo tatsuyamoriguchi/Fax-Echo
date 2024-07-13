@@ -19,6 +19,8 @@ struct FaxDetailView: View {
     
     @Binding var status: ReplyStatus
     
+    @ObservedObject var token: Token
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
@@ -66,7 +68,7 @@ struct FaxDetailView: View {
                     }
                     .sheet(isPresented: $isFaxPresented) {
                         
-                        FaxModalView(localCredential: localCredential, isFaxPresented: self.$isFaxPresented, fax: fax, status: $status)
+                        FaxModalView(localCredential: localCredential, isFaxPresented: self.$isFaxPresented, fax: fax, status: $status, token: token)
                     }
                     
                     Button("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue) {
@@ -108,7 +110,9 @@ struct FaxDetailView: View {
 
     @State var status = newDataToAdd
     let localCredential = LocalCredential(email: "asdfas", password: "asfaf", appid: "asfasf", apikey: "asfasf", userid: "asfasf", faxNumber: "asdfasf")
+    
+    let token = Token(access_token: "dummy access_token", token_type: "dummy token_type", expires_in: Date(), scope: "dummy scope", jti: "dummy jti")
 
-    return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status)
+    return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status, token: token)
 }
 

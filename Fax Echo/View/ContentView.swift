@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     @ObservedObject var authManager: AuthenticationManager
     @ObservedObject var localCredential: LocalCredential
+    @ObservedObject var token: Token
 
     
     var body: some View {
@@ -18,10 +19,11 @@ struct ContentView: View {
         Group {
             
             if authManager.isLoggedIn == true {
-                HomeView(authManager: authManager, localCredential: localCredential)
+                HomeView(authManager: authManager, localCredential: localCredential, token: token)
+                
                 
             } else {
-                Login(authManager: authManager, localCredential: localCredential)
+                Login(authManager: authManager, localCredential: localCredential, token: token)
             }
             
         }
@@ -29,6 +31,26 @@ struct ContentView: View {
 }
 
 #Preview {
-
-    ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "brasfaian@befasdfckos.com", password: "kakakak", appid: "1234", apikey: "abcd", userid: "OneTwoThree", faxNumber: "123-123-1234"))
+    
+        let authManager = AuthenticationManager()
+        let localCredential = LocalCredential(
+            email: "brasfaian@befasdfckos.com",
+            password: "kakakak",
+            appid: "1234",
+            apikey: "abcd",
+            userid: "OneTwoThree",
+            faxNumber: "123-123-1234"
+        )
+        let token = Token(
+            access_token: "dummy access_token",
+            token_type: "dummy token_type",
+            expires_in: Date(),
+            scope: "dummy scope",
+            jti: "dummy jti"
+        )
+        
+        return ContentView(authManager: authManager, localCredential: localCredential, token: token)
+    //    let token = Token(access_token: "dummy access_token", token_type: "dummy token_type", expires_in: Date(), scope: "dummu scope", jti: "dummy jti")
+//
+//    return ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "brasfaian@befasdfckos.com", password: "kakakak", appid: "1234", apikey: "abcd", userid: "OneTwoThree", faxNumber: "123-123-1234"), token: token)
 }

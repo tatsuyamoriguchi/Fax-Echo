@@ -73,6 +73,7 @@ struct FaxRowView: View {
 }
 
 struct Dashboard: View {
+    @ObservedObject var token: Token
     @ObservedObject var authManager: AuthenticationManager
     @ObservedObject var localCredential: LocalCredential
     
@@ -86,9 +87,12 @@ struct Dashboard: View {
     @Environment(\.modelContext) private var modelContext
     @Query var replyStatuses: [ReplyStatus]
     
+    // Demo purpose
     let demoData = DemoData()
     
     var groupedFaxes: [String: [Fax]] {
+        
+        // if there is no fax data, use demoData instead for demo purpose
         if multipleReceivedFaxes.faxes.count == 0 {
             multipleReceivedFaxes.faxes = demoData.demoFaxes
         }
@@ -154,13 +158,14 @@ struct Dashboard: View {
             
             .onAppear {
                 fetchFaxes()
+                
             }
         
             .navigationDestination(for: Fax.self) { fax in
                 FaxDetailView(localCredential: localCredential, fax: fax, status: Binding(
                     get: { getReplyStatus(for: fax.fax_id)  },
                     set: { _ in }
-                ))
+                ), token: token)
                 
             }
         }
@@ -245,8 +250,8 @@ struct Dashboard: View {
     let container = try! ModelContainer(for: ReplyStatus.self, configurations: config)
     let authManager = AuthenticationManager()
     let localCredential = LocalCredential(email: "briaasfn@beckasfasos.com", password: "kakakaka", appid: "1234", apikey: "abcd", userid: "OneTwoThree", faxNumber: "123-123-1234")
-//    let replyStatus = ReplyStatus(fax_id: "faxid12345", replyMethod: ReplyMethodEnum.fax, replyStatusResult: ReplyStatusResultEnum.completed, replyFaxID: "ReplyFaxID1234456789", replyTimeStamp: Date())
+    let token = Token(access_token: "dummy token", token_type: "dummy token_type", expires_in: Date(), scope: "dummy scope", jti: "dummy jti")
 
-    return Dashboard(authManager: authManager, localCredential: localCredential)
+    return Dashboard(token: token, authManager: authManager, localCredential: localCredential)
         .modelContainer(container)
 }
