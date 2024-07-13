@@ -11,7 +11,7 @@ import SwiftData
 struct FaxDetailView: View {
     // multipleReceivedFaxes is not necessary here???
     @StateObject var multipleReceivedFaxes = MultipleReceivedFaxes()
-    
+    @ObservedObject var localCredential: LocalCredential
     @ObservedObject var fax: Fax
     var dateTimeFormatter = DateTimeFormatter()
     
@@ -66,7 +66,7 @@ struct FaxDetailView: View {
                     }
                     .sheet(isPresented: $isFaxPresented) {
                         
-                        FaxModalView(isFaxPresented: self.$isFaxPresented, fax: fax, status: $status)
+                        FaxModalView(localCredential: localCredential, isFaxPresented: self.$isFaxPresented, fax: fax, status: $status)
                     }
                     
                     Button("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue) {
@@ -107,7 +107,8 @@ struct FaxDetailView: View {
     let newDataToAdd = ReplyStatus(fax_id: "fax_id123", replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
 
     @State var status = newDataToAdd
+    let localCredential = LocalCredential(email: "asdfas", password: "asfaf", appid: "asfasf", apikey: "asfasf", userid: "asfasf", faxNumber: "asdfasf")
 
-    return FaxDetailView(fax: DemoData().demoFaxes.first!, status: $status)
+    return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status)
 }
 

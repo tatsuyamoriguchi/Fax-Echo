@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct FaxModalView: View {
+    @ObservedObject var localCredential: LocalCredential
     @Binding var isFaxPresented: Bool
     @ObservedObject var fax: Fax
     @State private var test = ""
@@ -19,6 +20,8 @@ struct FaxModalView: View {
     @Binding var status: ReplyStatus
     
     @Environment(\.modelContext) private var modelContext
+    
+    private let sendFax = SendFax()
 
     var body: some View {
         NavigationStack {
@@ -66,6 +69,9 @@ struct FaxModalView: View {
                         saveMessageDetails()
                         isFaxPresented = false
                         
+                        // Test SendFax
+                        sendFax.sendFax(appid: localCredential.appid, apikey: localCredential.apikey, userid: localCredential.userid)
+                        
                         // if reply status doesn't exists
                         if status.replyStatusResult.rawValue == "No Status" {
                             let newDataToAdd = ReplyStatus(fax_id: fax.fax_id, replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
@@ -96,7 +102,7 @@ struct FaxModalView: View {
             
             // For Debug
             let demoData = DemoData()
-            print(demoData.demoFaxes.first!.fax_id)
+            print("demoData fax_id@FaxModalView: \(demoData.demoFaxes.first!.fax_id)")
         }
     }
     
@@ -127,6 +133,7 @@ struct FaxModalView: View {
     let newDataToAdd = ReplyStatus(fax_id: "fax_id123", replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
 
     @State var status = newDataToAdd
+    let localCredential = LocalCredential(email: "123abc@sfsf", password: "dsalkf", appid: "aslkdfawekjfaw", apikey: "123sdfkaslf", userid: "askdfaslf", faxNumber: "81312341234")
     
-    return FaxModalView(isFaxPresented: $isPresented, fax: DemoData().demoFaxes.first!, status: $status)
+    return FaxModalView(localCredential: localCredential, isFaxPresented: $isPresented, fax: DemoData().demoFaxes.first!, status: $status)
 }

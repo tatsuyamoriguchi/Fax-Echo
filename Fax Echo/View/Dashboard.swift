@@ -53,6 +53,9 @@ struct FaxRowView: View {
             }
             HStack {
                 Spacer()
+                if getReplyStatus(fax.fax_id).replyMethod.rawValue != "ellipsis" {
+                    Image(systemName: "arrowshape.turn.up.left")
+                }
                 Image(systemName: getReplyStatus(fax.fax_id).replyMethod.rawValue)
                 
                 
@@ -154,7 +157,7 @@ struct Dashboard: View {
             }
         
             .navigationDestination(for: Fax.self) { fax in
-                FaxDetailView(fax: fax, status: Binding(
+                FaxDetailView(localCredential: localCredential, fax: fax, status: Binding(
                     get: { getReplyStatus(for: fax.fax_id)  },
                     set: { _ in }
                 ))
