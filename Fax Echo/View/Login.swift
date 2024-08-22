@@ -27,8 +27,11 @@ struct Login: View {
             VStack {
                 Spacer()
                 Text("Fax Echo")
-                    .font(.custom("Inter-Light",size: 60))
+                    .frame(width: 300, height: 100)
+                    .font(.custom("Inter-ExtraLight",size: 60))
                     .foregroundStyle(Color.white)
+                    .background(Color.teal)
+                    .cornerRadius(10)
                 
                 Text("ver 1.0")
                     .font(.caption)
@@ -38,24 +41,9 @@ struct Login: View {
 
                 TextField("Enter your email", text: $email)
                     .textFieldStyle()
-//                    .onSubmit {
-//                        if !email.isEmpty && localCredential.email == email {
-//
-//                            authManager.appid = localCredential.appid
-//                            print("localCredential.email: \(localCredential.email)")
-//                            print("authManager.appid @Login: \(authManager.appid)")
-//                        }
-//                    }
                 
                 TextField("Enter your password", text: $password)
                     .textFieldStyle()
-//                    .onSubmit {
-//                        if !password.isEmpty && localCredential.password == password {
-//                            authManager.apikey = localCredential.apikey
-//                            print("localCredential.password: \(localCredential.password)")
-//                            print("authManager.apikey @Login: \(authManager.apikey)")
-//                        }
-//                    }
                 
                 Spacer()
                 
@@ -117,7 +105,6 @@ struct Login: View {
                             .foregroundStyle(Color.white)
                             .background(Color.teal)
                             .cornerRadius(5)
-//                            .border(.white)
                             
                             Spacer()
                             

@@ -50,7 +50,4 @@ struct ContentView: View {
         )
         
         return ContentView(authManager: authManager, localCredential: localCredential, token: token)
-    //    let token = Token(access_token: "dummy access_token", token_type: "dummy token_type", expires_in: Date(), scope: "dummu scope", jti: "dummy jti")
-//
-//    return ContentView(authManager: AuthenticationManager(), localCredential: LocalCredential(email: "brasfaian@befasdfckos.com", password: "kakakak", appid: "1234", apikey: "abcd", userid: "OneTwoThree", faxNumber: "123-123-1234"), token: token)
 }
