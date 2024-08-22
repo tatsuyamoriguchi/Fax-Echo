@@ -68,6 +68,7 @@ struct Login: View {
                             
                             Button("Login") {
                                 // check if email or password is not empty
+                                // Add input validation later here.
                                 if !email.isEmpty && !password.isEmpty {
 
                                 } else {

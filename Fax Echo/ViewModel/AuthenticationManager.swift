@@ -10,7 +10,7 @@ import Security
 
 class AuthenticationManager: ObservableObject {
     @Published var isLoggedIn: Bool = false
-    @Published var token: String = ""
+    @Published private var access_token: String = ""
 
     // Aren't these supposed to be Model?
     @Published var appid: String = ""
@@ -62,7 +62,7 @@ class AuthenticationManager: ObservableObject {
             if let error = error {
               // Display a pop up sheet to a user that somthing wrong with session.dataTask, contact your Fax Corporate Admninistrator.
               // Invoke userid to send to registered Fax Corporate Administrator
-                print("Error fetching token: \(error)")
+                print("Error fetching access_token: \(error)")
                 completion(nil)
           } else {
               let jsonDecoder = JSONDecoder()
@@ -70,9 +70,9 @@ class AuthenticationManager: ObservableObject {
               if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let tokenDictionary = try? jsonDecoder.decode(Token.self, from: data!) {
 
                   DispatchQueue.main.async {
-                      self.token = tokenDictionary.access_token
-                      print("Token received from getToken(): \(self.token)")
-                      completion(self.token)
+                      self.access_token = tokenDictionary.access_token
+                      print("Token received from getToken(): \(self.access_token)")
+                      completion(self.access_token)
                   }
 
               } else {

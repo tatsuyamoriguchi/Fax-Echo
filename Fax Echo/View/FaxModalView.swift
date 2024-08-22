@@ -25,6 +25,11 @@ struct FaxModalView: View {
     
     private let sendFax = SendFax()
 
+    // State variables for error handling
+    @State private var showErrorAlert = false
+    @State private var errorMessage = ""
+    
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -71,8 +76,18 @@ struct FaxModalView: View {
                         saveMessageDetails()
                         isFaxPresented = false
                         
+                        // Am I tracing token ObservedObecjt or a property, token, of authManager ObservedObject???
+                        print("token.access_token at Button tapped, Reply by Fax, of FaxModalView: \(token.access_token)")
+                        
                         // Test SendFax
-                        sendFax.sendFax(appid: localCredential.appid, apikey: localCredential.apikey, userid: localCredential.userid)
+                        //                        sendFax.sendFax2(authToken: token.access_token, userid: localCredential.userid)
+                        
+                        // Task Context: The Task { ... } block is introduced to create an asynchronous context within the Button action handler, allowing you to call await on the sendFax4(authToken:userid:) method.
+                        // This prevents an error, 'async' call in a function that does not support concurrency
+                        Task {
+                            
+                            try await sendFax.sendFax3(authToken: token.access_token, userid: localCredential.userid)
+                        }
                         
                         // if reply status doesn't exists
                         if status.replyStatusResult.rawValue == "No Status" {
@@ -84,7 +99,6 @@ struct FaxModalView: View {
                             status.replyTimeStamp = Date()
                             status.replyMethod = .fax
                             status.replyStatusResult = .completed
-//                            status.replyFaxID = ""
                             
                         }
                         
@@ -103,10 +117,10 @@ struct FaxModalView: View {
             loadMessageDetails()
             
             // For Debug
-            let demoData = DemoData()
-            print("demoData fax_id@FaxModalView: \(demoData.demoFaxes.first!.fax_id)")
-            print("")
-            print("access_token: \(token.access_token)")
+//            let demoData = DemoData()
+//            print("demoData fax_id@FaxModalView: \(demoData.demoFaxes.first!.fax_id)")
+//            print("")
+//            print("access_token: \(token.access_token)")
         }
     }
     

@@ -23,15 +23,14 @@ struct DemoSendFaxData {
         self.appid = appid
         self.apikey = apikey
         self.auth = appid + ":" + apikey
-        self.authBase64 = self.auth.toBase64()
-        self.userid = userid
+        self.authBase64 = "" 
+        self.userid = ""
         
         self.headers = [
             "user-id": userid,
             "transaction-id": "",
             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
             "Accept": "application/json",
-            // Encode appid:appkey in Base64
             "Authorization": "Basic " + authBase64
         ]
         
@@ -40,7 +39,7 @@ struct DemoSendFaxData {
                 [
                     "to_name": "Joe Bloggs",
                     "to_company": "Acme Widgets Inc.",
-                    "fax_number": "18665559999"
+                    "fax_number": "81342167158"
                 ]//,
 //                [
 //                    "to_name": "Amy Winehouse",
@@ -57,8 +56,8 @@ struct DemoSendFaxData {
                     "message": "Excepteur sint occaecat cupidatat non proident"
                 ],
                 "retry_options": [
-                    "non_billable": 2,
-                    "billable": 3,
+                    "non_billable": 1,
+                    "billable": 2,
                     "human_answer": 1
                 ]
             ],

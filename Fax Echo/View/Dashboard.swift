@@ -220,12 +220,18 @@ struct Dashboard: View {
     
     private func fetchFaxes() {
         
-        authManager.getToken(appid: localCredential.appid, apikey: localCredential.apikey) { token in
+        authManager.getToken(appid: localCredential.appid, apikey: localCredential.apikey) { access_token in
             print("localCredential.appid @func fetchFaxes(): \(localCredential.appid)")
             print("localCredential.apikey @func fetchFaxes(): \(localCredential.apikey)")
+ 
+            if let access_token = access_token {
+                // confused authManager.token and Token's token
+//                authManager.token = token.access_token
+//                print("authManager.token @fetchFaxes(): \(authManager.token)")
+                print("token @func fetchFaxes(): \(access_token)")
+                token.access_token = access_token
 
-            if let token = token {
-                multipleReceivedFaxes.getFaxes(token: token, userid: localCredential.userid)
+                multipleReceivedFaxes.getFaxes(token: access_token, userid: localCredential.userid)
             } else {
                 print("Failed to fetch token at fetchFaxes()")
             }

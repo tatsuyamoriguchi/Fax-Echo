@@ -26,7 +26,7 @@ class MultipleReceivedFaxes: ObservableObject {
             "Authorization": "Bearer " + token,
             "user-id": userid,
             "transaction-id": "",
-            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
         ]
 
  
@@ -56,6 +56,10 @@ class MultipleReceivedFaxes: ObservableObject {
                                 print("")
                                 print("Faxes updated from getFaxes(): \(faxes.count) faxes received")
                                 self.printFaxes(faxes)
+                                
+                                print("")
+                                print("headers: \(headers)")
+                                print("")
 
                             }
                             

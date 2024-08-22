@@ -54,7 +54,6 @@ struct FaxDetailView: View {
                 
                 Section(header: Text("Action")) {
 
-//                    if status.replyStatusResult.rawValue.isEmpty {
                     if status.replyStatusResult.rawValue == "No Status" {
                         Text("No Reply History")
                     } else {
@@ -64,6 +63,7 @@ struct FaxDetailView: View {
                     Button("Reply by FAX", systemImage: MenuIcon.replyByFax.rawValue) {
                         print("FAX button tapped")
                         isFaxPresented = true
+                        print("token.access_token @Button Tapped, Reply by Fax, of FaxDetailView(): \(token.access_token)")
                         
                     }
                     .sheet(isPresented: $isFaxPresented) {
