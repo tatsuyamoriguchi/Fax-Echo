@@ -10,7 +10,8 @@ import SwiftData
 
 struct FaxDetailView: View {
     // multipleReceivedFaxes is not necessary here???
-    @StateObject var multipleReceivedFaxes = MultipleReceivedFaxes()
+//    @ObservedObject var multipleReceivedFaxes = MultipleReceivedFaxes()
+    
     @ObservedObject var localCredential: LocalCredential
     @ObservedObject var fax: Fax
     var dateTimeFormatter = DateTimeFormatter()

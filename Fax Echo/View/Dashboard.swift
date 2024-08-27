@@ -77,9 +77,9 @@ struct Dashboard: View {
     @ObservedObject var authManager: AuthenticationManager
     @ObservedObject var localCredential: LocalCredential
     
-    @StateObject private var multipleReceivedFaxes = MultipleReceivedFaxes()
+    @ObservedObject private var multipleReceivedFaxes = MultipleReceivedFaxes()
     var dateTimeFormatter = DateTimeFormatter()
-    @StateObject private var swipeSettings = SwipeSettings()
+    @ObservedObject private var swipeSettings = SwipeSettings()
     
     // State variable to store the selected fax ID for querying ReplyStatus
     @State private var selectedFaxID: String = ""
@@ -92,10 +92,7 @@ struct Dashboard: View {
     
     var groupedFaxes: [String: [Fax]] {
         
-        // if there is no fax data, use demoData instead for demo purpose
-        if multipleReceivedFaxes.faxes.count == 0 {
-            multipleReceivedFaxes.faxes = demoData.demoFaxes
-        }
+
 
         
         return Dictionary(grouping: multipleReceivedFaxes.faxes, by: { fax in
@@ -157,6 +154,11 @@ struct Dashboard: View {
             }
             
             .onAppear {
+                // if there is no fax data, use demoData instead for demo purpose
+                if multipleReceivedFaxes.faxes.count == 0 {
+                    multipleReceivedFaxes.faxes = demoData.demoFaxes
+                }
+                
                 fetchFaxes()
                 
             }

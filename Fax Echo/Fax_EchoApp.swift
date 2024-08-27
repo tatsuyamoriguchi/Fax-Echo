@@ -11,9 +11,9 @@ import SwiftData
 @main
 struct Fax_EchoApp: App {
     
-    @StateObject var localCredential = LocalCredential(email: "", password: "", appid: "", apikey: "", userid: "", faxNumber: "")
-    @StateObject var authManager = AuthenticationManager()
-    @StateObject var token = Token(access_token: "", token_type: "", expires_in: Date(), scope: "", jti: "")
+    @ObservedObject var localCredential = LocalCredential(email: "", password: "", appid: "", apikey: "", userid: "", faxNumber: "")
+    @ObservedObject var authManager = AuthenticationManager()
+    @ObservedObject var token = Token(access_token: "", token_type: "", expires_in: Date(), scope: "", jti: "")
 
     
     var sharedModelContainer: ModelContainer = {
