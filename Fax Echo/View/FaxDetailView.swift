@@ -9,9 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct FaxDetailView: View {
-    // multipleReceivedFaxes is not necessary here???
-//    @ObservedObject var multipleReceivedFaxes = MultipleReceivedFaxes()
-    
+    @Environment(\.modelContext) private var modelContext
     @ObservedObject var localCredential: LocalCredential
     @ObservedObject var fax: Fax
     var dateTimeFormatter = DateTimeFormatter()
@@ -80,6 +78,9 @@ struct FaxDetailView: View {
                         
                     }
                     Button("Delete as Spam", systemImage: MenuIcon.deleteAsSpam.rawValue) {
+                        status.replyMethod = .delete
+                        status.replyStatusResult = .deleted
+                        print("\(status) was deleted.")
                         
                     }
                     Button("No Action", systemImage: MenuIcon.noAction.rawValue) {

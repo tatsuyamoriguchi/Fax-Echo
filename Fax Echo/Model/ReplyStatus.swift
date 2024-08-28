@@ -31,6 +31,7 @@ enum ReplyStatusResultEnum: String, Codable {
     case completed = "Replied"
     case failed = "Reply Failed"
     case noStatus = "No Status"
+    case deleted = "Deleted"
 }
 
 enum ReplyMethodEnum: String, Codable {
@@ -38,7 +39,7 @@ enum ReplyMethodEnum: String, Codable {
     case phone = "phone.fill.badge.checkmark"
     case message = "checkmark.message.fill"
     case email = "envelope.fill"
-    case spam = "trash.fill"
+    case delete = "trash.fill"
     case noAction = "archivebox.fill"
     case noReply = "ellipsis" // "nosign"
 }

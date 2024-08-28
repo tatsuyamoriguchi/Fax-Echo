@@ -19,15 +19,20 @@ struct FaxSectionView: View {
     var body: some View {
         Section(header: Text(date)) {
             ForEach(faxes, id: \.fax_id) { fax in
+                
                 let currentStatus = replyStatuses.first { $0.fax_id == fax.fax_id }
                 
-                NavigationLink(value: fax) {
-                    FaxRowView(
-                        fax: fax,
-                        dateTimeFormatter: dateTimeFormatter,
-                        getReplyStatus: getReplyStatus,
-                        currentStatus: currentStatus
-                    )
+                if getReplyStatus(fax.fax_id).replyStatusResult != .deleted {
+
+                
+                    NavigationLink(value: fax) {
+                        FaxRowView(
+                            fax: fax,
+                            dateTimeFormatter: dateTimeFormatter,
+                            getReplyStatus: getReplyStatus,
+                            currentStatus: currentStatus
+                        )
+                    }
                 }
             }
         }
@@ -119,6 +124,7 @@ struct Dashboard: View {
             
             List {
                 ForEach(groupedFaxes.keys.sorted(), id: \.self) { date in
+                    
                                 FaxSectionView(
                                     date: date,
                                     faxes: groupedFaxes[date]!,

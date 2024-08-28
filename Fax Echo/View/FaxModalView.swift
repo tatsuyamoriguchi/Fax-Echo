@@ -77,15 +77,10 @@ struct FaxModalView: View {
                             saveMessageDetails()
                         }
                         isFaxPresented = false
-                        
-                        // Am I tracing token ObservedObecjt or a property, token, of authManager ObservedObject???
+ 
+                        // Debugging purpose
                         print("token.access_token at Button tapped, Reply by Fax, of FaxModalView: \(token.access_token)")
                         
-                        // Test SendFax
-                        //                        sendFax.sendFax2(authToken: token.access_token, userid: localCredential.userid)
-                        
-                        // Task Context: The Task { ... } block is introduced to create an asynchronous context within the Button action handler, allowing you to call await on the sendFax4(authToken:userid:) method.
-                        // This prevents an error, 'async' call in a function that does not support concurrency
                         Task {
                             
                             try await sendFax.sendFax3(authToken: token.access_token, userid: localCredential.userid)
