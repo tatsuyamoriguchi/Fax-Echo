@@ -73,7 +73,9 @@ struct FaxModalView: View {
                     .padding()
                     Spacer()
                     Button(action: {
-                        saveMessageDetails()
+                        if saveAsTemplate {
+                            saveMessageDetails()
+                        }
                         isFaxPresented = false
                         
                         // Am I tracing token ObservedObecjt or a property, token, of authManager ObservedObject???
@@ -115,12 +117,6 @@ struct FaxModalView: View {
         
         .onAppear {
             loadMessageDetails()
-            
-            // For Debug
-//            let demoData = DemoData()
-//            print("demoData fax_id@FaxModalView: \(demoData.demoFaxes.first!.fax_id)")
-//            print("")
-//            print("access_token: \(token.access_token)")
         }
     }
     
