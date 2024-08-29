@@ -56,6 +56,7 @@ struct FaxRowView: View {
                     .font(.caption)
                 Spacer()
             }
+            .foregroundColor(getReplyStatus(fax.fax_id).replyStatusResult == .archived ? Color.gray.opacity(0.5) : .none)
             HStack {
                 Spacer()
                 if getReplyStatus(fax.fax_id).replyMethod.rawValue != "ellipsis" {
@@ -68,8 +69,12 @@ struct FaxRowView: View {
                     let timeString = dateTimeFormatter.date2String(from: getReplyStatus(fax.fax_id).replyTimeStamp)
                     Text(dateTimeFormatter.formattedDateOnly(from: timeString))
                         .font(.caption)
+                        .foregroundColor(getReplyStatus(fax.fax_id).replyStatusResult == .archived ? Color.gray.opacity(0.5) : .none)
+
                     Text(dateTimeFormatter.formattedTime(from: timeString))
                         .font(.caption)
+                        .foregroundColor(getReplyStatus(fax.fax_id).replyStatusResult == .archived ? Color.gray.opacity(0.5) : .none)
+
                 }
                 
             }

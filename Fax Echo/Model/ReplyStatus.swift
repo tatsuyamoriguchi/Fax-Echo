@@ -32,6 +32,7 @@ enum ReplyStatusResultEnum: String, Codable {
     case failed = "Reply Failed"
     case noStatus = "No Status"
     case deleted = "Deleted"
+    case archived = "Archived"
 }
 
 enum ReplyMethodEnum: String, Codable {

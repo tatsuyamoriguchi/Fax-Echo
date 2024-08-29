@@ -77,21 +77,42 @@ struct FaxDetailView: View {
                     Button("Reply by Message", systemImage: MenuIcon.replyByMessage.rawValue) {
                         
                     }
-                    Button("Delete as Spam", systemImage: MenuIcon.deleteAsSpam.rawValue) {
-                        status.replyMethod = .delete
-                        status.replyStatusResult = .deleted
-                        print("\(status) was deleted.")
-                        
-                    }
-                    Button("No Action", systemImage: MenuIcon.noAction.rawValue) {
-                        
-                    }
+                    Button("Delete as Spam", systemImage: MenuIcon.deleteAsSpam.rawValue, action: {        
+                        // Still display the fax data in Dashboard, but dim it as Archived
+//                        status.replyMethod = .delete
+//                        status.replyStatusResult = .deleted
+                        update(replyMethod: .delete, replyStatusResult: .deleted)
+                    })
+                    
+                    Button("No Action", systemImage: MenuIcon.noAction.rawValue, action: {
+//                        status.replyMethod = .noAction
+//                        status.replyStatusResult = .archived
+                        update(replyMethod: .noAction, replyStatusResult: .archived)
+
+                    })
                 }
             .navigationTitle("FAX Details")
             .navigationBarTitleDisplayMode(.automatic)
         }
     }
     
+    private func update(replyMethod: ReplyMethodEnum, replyStatusResult: ReplyStatusResultEnum) {
+        if status.replyStatusResult.rawValue == "No Status" {
+//            let newDataToAdd = ReplyStatus(fax_id: fax.fax_id, replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
+            let newDataToAdd = ReplyStatus(fax_id: fax.fax_id, replyMethod: replyMethod, replyStatusResult:  replyStatusResult, replyFaxID: "TEST123", replyTimeStamp: Date()) // Obtain replyFaxID from eFax Corporate API later.
+            
+            modelContext.insert(newDataToAdd)
+        } else {
+            // else { update the exisiting reply status data with new values.
+            status.replyTimeStamp = Date()
+            status.replyMethod = replyMethod
+            status.replyStatusResult = replyStatusResult
+            
+        }
+    }
+
+    
+
     private func copyFax() {
         let faxInfo = """
             Date: \(dateTimeFormatter.formattedDateOnly(from: fax.completed_timestamp))
