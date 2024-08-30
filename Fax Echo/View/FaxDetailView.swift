@@ -20,6 +20,8 @@ struct FaxDetailView: View {
     
     @ObservedObject var token: Token
     
+    @State var phone: String = "19493450034"
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
@@ -69,24 +71,33 @@ struct FaxDetailView: View {
                         
                         FaxModalView(localCredential: localCredential, isFaxPresented: self.$isFaxPresented, fax: fax, status: $status, token: token)
                     }
+
                     
-                    Button("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue) {
+                    HStack {
+                        Button(action: {
+                            UIApplication.shared.open(URL(string: "tel:\(phone)")!)
+                        }) {
+                            Label("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue)
+                                .lineLimit(1) // Ensure single line
+                                .fixedSize(horizontal: true, vertical: false) // Prevents text from wrapping
+                        }
                         
+                        TextField("", text: $phone)
+                            .layoutPriority(-1) // Ensures Button has higher priority
                     }
+
+
                     
                     Button("Reply by Message", systemImage: MenuIcon.replyByMessage.rawValue) {
-                        
                     }
                     Button("Delete as Spam", systemImage: MenuIcon.deleteAsSpam.rawValue, action: {        
+                        // Not actually deleted
+                        // Update ReplyStatus data as deleted,
                         // Still display the fax data in Dashboard, but dim it as Archived
-//                        status.replyMethod = .delete
-//                        status.replyStatusResult = .deleted
                         update(replyMethod: .delete, replyStatusResult: .deleted)
                     })
                     
                     Button("No Action", systemImage: MenuIcon.noAction.rawValue, action: {
-//                        status.replyMethod = .noAction
-//                        status.replyStatusResult = .archived
                         update(replyMethod: .noAction, replyStatusResult: .archived)
 
                     })
@@ -98,7 +109,8 @@ struct FaxDetailView: View {
     
     private func update(replyMethod: ReplyMethodEnum, replyStatusResult: ReplyStatusResultEnum) {
         if status.replyStatusResult.rawValue == "No Status" {
-//            let newDataToAdd = ReplyStatus(fax_id: fax.fax_id, replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
+            // ReplyStatus data is not created yet when a received fax data is detected for the first time.
+            // So you need to create a new ReplyStatus data when trying to modify it for the first time.
             let newDataToAdd = ReplyStatus(fax_id: fax.fax_id, replyMethod: replyMethod, replyStatusResult:  replyStatusResult, replyFaxID: "TEST123", replyTimeStamp: Date()) // Obtain replyFaxID from eFax Corporate API later.
             
             modelContext.insert(newDataToAdd)
@@ -136,6 +148,6 @@ struct FaxDetailView: View {
     
     let token = Token(access_token: "dummy access_token", token_type: "dummy token_type", expires_in: Date(), scope: "dummy scope", jti: "dummy jti")
 
-    return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status, token: token)
+    return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status, token: token, phone: "19493450034")
 }
 

@@ -103,6 +103,7 @@
 		8C50E0C62C346CF8007BE419 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C50E0A12C346CF8007BE419 /* README.txt */; };
 		8C50E0C82C347B54007BE419 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
 		8C50E0C92C347B55007BE419 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2286092C33CDA50011BE64 /* AuthenticationManager.swift */; };
+		8CB891352C8236ED001D8FEE /* PhoneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB891342C8236ED001D8FEE /* PhoneCall.swift */; };
 		8CE41A9E2C6A776F0096343E /* SendFaxAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE41A9D2C6A776F0096343E /* SendFaxAPIServiceProtocol.swift */; };
 		8CE9317C2C38873B0067D1C3 /* LocalCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9317B2C38873B0067D1C3 /* LocalCredential.swift */; };
 /* End PBXBuildFile section */
@@ -171,6 +172,7 @@
 		8C50E0A02C346CF8007BE419 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		8C50E0A12C346CF8007BE419 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		8C50E0C72C346D6D007BE419 /* Fax-Echo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fax-Echo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8CB891342C8236ED001D8FEE /* PhoneCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCall.swift; sourceTree = "<group>"; };
 		8CE41A9D2C6A776F0096343E /* SendFaxAPIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFaxAPIServiceProtocol.swift; sourceTree = "<group>"; };
 		8CE9317B2C38873B0067D1C3 /* LocalCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredential.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +305,7 @@
 				8C22860C2C33CDA50011BE64 /* Keychain.swift */,
 				8C22860E2C33CDA50011BE64 /* MultipleReceivedFaxes.swift */,
 				8C3963BA2C41ABB30082910F /* SendFax.swift */,
+				8CB891342C8236ED001D8FEE /* PhoneCall.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				8C2285F72C33CD6F0011BE64 /* HomeView.swift in Sources */,
 				8C2285CA2C33CD560011BE64 /* DemoData.swift in Sources */,
 				8C2285EB2C33CD6F0011BE64 /* Dashboard.swift in Sources */,
+				8CB891352C8236ED001D8FEE /* PhoneCall.swift in Sources */,
 				8C2286202C33CDA50011BE64 /* MultipleReceivedFaxes.swift in Sources */,
 				8C2285D32C33CD560011BE64 /* SwipeMenu.swift in Sources */,
 				8C2285D02C33CD560011BE64 /* ReplyStatus.swift in Sources */,
