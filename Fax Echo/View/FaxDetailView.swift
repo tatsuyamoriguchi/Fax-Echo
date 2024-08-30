@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Contacts
 
 struct FaxDetailView: View {
     @Environment(\.modelContext) private var modelContext
@@ -22,6 +23,8 @@ struct FaxDetailView: View {
     
     @State var phone: String = "19493450034"
     
+    @State var contacts: [CNContact] = []
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
@@ -30,81 +33,103 @@ struct FaxDetailView: View {
         return formatter
     }()
     
+    
+    
     var body: some View {
-            Form {
-                Section(header: Text("Fax Info"), footer: Text("Long Press to Copy Fax Info")) {
-                    
-                    Text("Date: \(dateTimeFormatter.formattedDateOnly(from: fax.completed_timestamp))")
-                    
-                    Text("Time: \(dateTimeFormatter.formattedTime(from: fax.completed_timestamp))")
-                    
-                    Text("Sender's FAX Number: \(fax.originating_fax_tsid)")
-                    
-                    Text("Number of Pages: \(String(fax.pages))")
-                    Text("Image Downloaded: \(String(fax.image_downloaded))")
-                    
-                    Text("FAX ID: \(fax.fax_id)")
-
+        
+        Form {
+            Section(header: Text("Fax Info"), footer: Text("Long Press to Copy Fax Info")) {
+                
+                Text("Date: \(dateTimeFormatter.formattedDateOnly(from: fax.completed_timestamp))")
+                
+                Text("Time: \(dateTimeFormatter.formattedTime(from: fax.completed_timestamp))")
+                
+                Text("Sender's FAX Number: \(fax.originating_fax_tsid)")
+                
+                Text("Number of Pages: \(String(fax.pages))")
+                Text("Image Downloaded: \(String(fax.image_downloaded))")
+                
+                Text("FAX ID: \(fax.fax_id)")
+                
+            }
+            .contextMenu {
+                Button(action: copyFax) {
+                    Text("Copy to clipboard")
+                    Image(systemName: "doc.on.doc")
                 }
-                .contextMenu {
-                    Button(action: copyFax) {
-                        Text("Copy to clipboard")
-                        Image(systemName: "doc.on.doc")
-                    }
+            }
+            
+            Section(header: Text("Action")) {
+                
+                if status.replyStatusResult.rawValue == "No Status" {
+                    Text("No Reply History")
+                } else {
+                    Text("\(String(describing: status.replyStatusResult.rawValue)) by \(String(describing: status.replyMethod))")
+                    Text("\(dateFormatter.string(from: status.replyTimeStamp))")
+                }
+                Button("Reply by FAX", systemImage: MenuIcon.replyByFax.rawValue) {
+                    print("FAX button tapped")
+                    isFaxPresented = true
+                    print("token.access_token @Button Tapped, Reply by Fax, of FaxDetailView(): \(token.access_token)")
+                    
+                }
+                .sheet(isPresented: $isFaxPresented) {
+                    
+                    FaxModalView(localCredential: localCredential, isFaxPresented: self.$isFaxPresented, fax: fax, status: $status, token: token)
                 }
                 
-                Section(header: Text("Action")) {
-
-                    if status.replyStatusResult.rawValue == "No Status" {
-                        Text("No Reply History")
-                    } else {
-                        Text("\(String(describing: status.replyStatusResult.rawValue)) by \(String(describing: status.replyMethod))")
-                        Text("\(dateFormatter.string(from: status.replyTimeStamp))")
+                
+                VStack(alignment: .leading){
+                    Button(action: {
+                        UIApplication.shared.open(URL(string: "tel:\(phone)")!)
+                    }) {
+                        Label("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue)
+                            .lineLimit(1) // Ensure single line
+                            .fixedSize(horizontal: true, vertical: false) // Prevents text from wrapping
                     }
-                    Button("Reply by FAX", systemImage: MenuIcon.replyByFax.rawValue) {
-                        print("FAX button tapped")
-                        isFaxPresented = true
-                        print("token.access_token @Button Tapped, Reply by Fax, of FaxDetailView(): \(token.access_token)")
-                        
-                    }
-                    .sheet(isPresented: $isFaxPresented) {
-                        
-                        FaxModalView(localCredential: localCredential, isFaxPresented: self.$isFaxPresented, fax: fax, status: $status, token: token)
-                    }
-
-                    
                     HStack {
-                        Button(action: {
-                            UIApplication.shared.open(URL(string: "tel:\(phone)")!)
-                        }) {
-                            Label("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue)
-                                .lineLimit(1) // Ensure single line
-                                .fixedSize(horizontal: true, vertical: false) // Prevents text from wrapping
+                        //                            Spacer()
+                        //                            TextField("", text: $phone)
+                        Picker("Phone Number", selection: $contacts) {
+                            ForEach(contacts.indices, id: \.self) { index in
+                                
+                                Text("\(contacts[index].organizationName) - \(contacts[index].givenName)")
+                                //                                Text(contacts[index].familyName)
+                                //                                Text(contacts[index].phoneNumbers)}
+                            }
                         }
+                        .pickerStyle(.menu)
                         
-                        TextField("", text: $phone)
-                            .layoutPriority(-1) // Ensures Button has higher priority
                     }
-
-
+                    //                        .onAppear(perform: {
+                    //                            contacts = await phoneCall.fetchSpecificContact(fax: fax)
+                    //                        })
                     
-                    Button("Reply by Message", systemImage: MenuIcon.replyByMessage.rawValue) {
-                    }
-                    Button("Delete as Spam", systemImage: MenuIcon.deleteAsSpam.rawValue, action: {        
-                        // Not actually deleted
-                        // Update ReplyStatus data as deleted,
-                        // Still display the fax data in Dashboard, but dim it as Archived
-                        update(replyMethod: .delete, replyStatusResult: .deleted)
-                    })
-                    
-                    Button("No Action", systemImage: MenuIcon.noAction.rawValue, action: {
-                        update(replyMethod: .noAction, replyStatusResult: .archived)
-
-                    })
                 }
+                
+                Button("Reply by Message", systemImage: MenuIcon.replyByMessage.rawValue) {
+                }
+                Button("Delete as Spam", systemImage: MenuIcon.deleteAsSpam.rawValue, action: {
+                    // Not actually deleted
+                    // Update ReplyStatus data as deleted,
+                    // Still display the fax data in Dashboard, but dim it as Archived
+                    update(replyMethod: .delete, replyStatusResult: .deleted)
+                })
+                
+                Button("No Action", systemImage: MenuIcon.noAction.rawValue, action: {
+                    update(replyMethod: .noAction, replyStatusResult: .archived)
+                    
+                })
+            }
             .navigationTitle("FAX Details")
             .navigationBarTitleDisplayMode(.automatic)
+            // Use `.task` to run the async function when the view appears
+            .task {
+                let phoneCall = PhoneCall()
+                contacts = await phoneCall.fetchSpecificContact(fax: fax)
+            }
         }
+        
     }
     
     private func update(replyMethod: ReplyMethodEnum, replyStatusResult: ReplyStatusResultEnum) {
@@ -122,9 +147,9 @@ struct FaxDetailView: View {
             
         }
     }
-
     
-
+    
+    
     private func copyFax() {
         let faxInfo = """
             Date: \(dateTimeFormatter.formattedDateOnly(from: fax.completed_timestamp))
@@ -137,17 +162,17 @@ struct FaxDetailView: View {
         
         UIPasteboard.general.string = faxInfo
     }
-
+    
 }
 
 #Preview {
     let newDataToAdd = ReplyStatus(fax_id: "fax_id123", replyMethod: ReplyMethodEnum.fax, replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus, replyFaxID: "TEST", replyTimeStamp: Date())
-
+    
     @State var status = newDataToAdd
     let localCredential = LocalCredential(email: "asdfas", password: "asfaf", appid: "asfasf", apikey: "asfasf", userid: "asfasf", faxNumber: "asdfasf")
     
     let token = Token(access_token: "dummy access_token", token_type: "dummy token_type", expires_in: Date(), scope: "dummy scope", jti: "dummy jti")
-
+    
     return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status, token: token, phone: "19493450034")
 }
 
