@@ -16,8 +16,7 @@ class PhoneCall {
     }
     
     // Access iOS Contacts app
-    func fetchSpecificContact(fax: Fax) async -> [CNContact] {
-        // Run in the background
+    func fetchSpecificContact(fax: Fax) async -> [CNContact] { // Run in the background
         
         // Get access to the contacts store
         let store = CNContactStore()
@@ -26,8 +25,7 @@ class PhoneCall {
         let keys = [CNContactOrganizationNameKey, CNContactGivenNameKey, CNContactPhoneNumbersKey]
                 
         // Predicate to find contacts with a matching phone number
-        let predicate = CNContact.predicateForContacts(matching: CNPhoneNumber(stringValue: fax.originating_fax_tsid))
-        
+        let predicate = CNContact.predicateForContacts(matching: CNPhoneNumber(stringValue: fax.originating_fax_number))
         do {
             // Fetch the contacts matching the predicate
             let contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys as [CNKeyDescriptor])

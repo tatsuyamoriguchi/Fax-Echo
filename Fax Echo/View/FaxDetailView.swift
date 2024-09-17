@@ -24,6 +24,8 @@ struct FaxDetailView: View {
     @State var phone: String = "19493450034"
     
     @State var contacts: [CNContact] = []
+
+    let phoneCall = PhoneCall()
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -81,15 +83,19 @@ struct FaxDetailView: View {
                 
                 VStack(alignment: .leading){
                     Button(action: {
-                        UIApplication.shared.open(URL(string: "tel:\(phone)")!)
+                        Link("\(phone)", destination: URL(string: "tel: \(phone)")!) // Add nil error code later
+
+                        //  UIApplication.shared.open(URL(string: "tel:\(phone)")!)
                     }) {
                         Label("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue)
                             .lineLimit(1) // Ensure single line
                             .fixedSize(horizontal: true, vertical: false) // Prevents text from wrapping
                     }
+                    
                     HStack {
                         //                            Spacer()
                         //                            TextField("", text: $phone)
+
                         Picker("Phone Number", selection: $contacts) {
                             ForEach(contacts.indices, id: \.self) { index in
                                 
@@ -101,9 +107,9 @@ struct FaxDetailView: View {
                         .pickerStyle(.menu)
                         
                     }
-                    //                        .onAppear(perform: {
-                    //                            contacts = await phoneCall.fetchSpecificContact(fax: fax)
-                    //                        })
+//                    .onAppear(perform: {
+//                        contacts = await phoneCall.fetchSpecificContact(fax: fax)
+//                    })
                     
                 }
                 
@@ -125,7 +131,6 @@ struct FaxDetailView: View {
             .navigationBarTitleDisplayMode(.automatic)
             // Use `.task` to run the async function when the view appears
             .task {
-                let phoneCall = PhoneCall()
                 contacts = await phoneCall.fetchSpecificContact(fax: fax)
             }
         }

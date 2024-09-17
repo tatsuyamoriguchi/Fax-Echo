@@ -65,14 +65,29 @@ struct DemoData {
                 completed_timestamp: "2024-05-21T04:27:56.000+0000",
                 direction: "inbound",
                 destination_fax_number: "1234567890",
-                originating_fax_number: "987654321",
+                originating_fax_number: "9876543212",
                 originating_fax_tsid: "South West Clinic",
                 destination_fax_csid: "CSID12345",
                 routing_data: [fax1RoutingData],
                 transmission_data: [fax1TransmissionData],
                 client_tracking_data: [fax1ClientTrackingData]
                ),
-            
+            Fax(fax_id: "FAX123456",
+                size: 123,
+                duration: 300,
+                pages: 2,
+                image_downloaded: false,
+                fax_status: "Completed",
+                completed_timestamp: "2024-08-11T04:27:56.000+0000",
+                direction: "inbound",
+                destination_fax_number: "1234567890",
+                originating_fax_number: "987654321",
+                originating_fax_tsid: "9876543212",
+                destination_fax_csid: "CSID12345",
+                routing_data: [fax1RoutingData],
+                transmission_data: [fax1TransmissionData],
+                client_tracking_data: [fax1ClientTrackingData]
+               ),
             
             Fax(
                 fax_id: "FAX987654",
