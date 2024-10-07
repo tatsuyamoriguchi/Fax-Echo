@@ -22,7 +22,7 @@ class PhoneCall {
         let store = CNContactStore()
         
         // Keys to fetch
-        let keys = [CNContactOrganizationNameKey, CNContactGivenNameKey, CNContactPhoneNumbersKey]
+        let keys = [CNContactOrganizationNameKey, CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
                 
         // Predicate to find contacts with a matching phone number
         let predicate = CNContact.predicateForContacts(matching: CNPhoneNumber(stringValue: fax.originating_fax_number))

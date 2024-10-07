@@ -21,7 +21,7 @@ struct FaxDetailView: View {
     
     @ObservedObject var token: Token
     
-    @State var phone: String = "19493450034"
+//    @State var phone: String
     
     @State var contacts: [CNContact] = []
 
@@ -83,9 +83,13 @@ struct FaxDetailView: View {
                 
                 VStack(alignment: .leading){
                     Button(action: {
-                        Link("\(phone)", destination: URL(string: "tel: \(phone)")!) // Add nil error code later
-
-                        //  UIApplication.shared.open(URL(string: "tel:\(phone)")!)
+                        // Get phone numbers of the contact from Contacts
+                        // Assign it to var phones property
+                        // List them in Picker
+//                        Link("\(phone)", destination: URL(string: "tel: \(phone)")!) // Add nil error code later
+//                        print("Reply by Phone Pressed: \(phone)")
+//
+//                        //  UIApplication.shared.open(URL(string: "tel:\(phone)")!)
                     }) {
                         Label("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue)
                             .lineLimit(1) // Ensure single line
@@ -93,15 +97,15 @@ struct FaxDetailView: View {
                     }
                     
                     HStack {
-                        //                            Spacer()
-                        //                            TextField("", text: $phone)
-
-                        Picker("Phone Number", selection: $contacts) {
+                        // Display Contacts name, org name in the section header
+                        // *If not found, display "No contact info found"
+                        Picker("☏", selection: $contacts) {
+                            let _ = print(contacts)
+                            // * contacts[index].phoneNumbers, id: \.self) instead???
                             ForEach(contacts.indices, id: \.self) { index in
                                 
                                 Text("\(contacts[index].organizationName) - \(contacts[index].givenName)")
-                                //                                Text(contacts[index].familyName)
-                                //                                Text(contacts[index].phoneNumbers)}
+                                
                             }
                         }
                         .pickerStyle(.menu)
@@ -178,6 +182,6 @@ struct FaxDetailView: View {
     
     let token = Token(access_token: "dummy access_token", token_type: "dummy token_type", expires_in: Date(), scope: "dummy scope", jti: "dummy jti")
     
-    return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status, token: token, phone: "19493450034")
+    return FaxDetailView(localCredential: localCredential, fax: DemoData().demoFaxes.first!, status: $status, token: token)
 }
 

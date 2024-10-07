@@ -42,7 +42,7 @@ struct Login: View {
                 TextField("Enter your email", text: $email)
                     .textFieldStyle()
                 
-                TextField("Enter your password", text: $password)
+                SecureField("Enter your password", text: $password)
                     .textFieldStyle()
                 
                 Spacer()
