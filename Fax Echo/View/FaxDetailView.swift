@@ -99,17 +99,21 @@ struct FaxDetailView: View {
                     HStack {
                         // Display Contacts name, org name in the section header
                         // *If not found, display "No contact info found"
-                        Picker("☏", selection: $contacts) {
-                            let _ = print(contacts)
-                            // * contacts[index].phoneNumbers, id: \.self) instead???
-                            ForEach(contacts.indices, id: \.self) { index in
+                        if contacts != [] {
+                            Picker("☏", selection: $contacts) {
                                 
-                                Text("\(contacts[index].organizationName) - \(contacts[index].givenName)")
-                                
+                                // * contacts[index].phoneNumbers, id: \.self) instead???
+                                ForEach(contacts.indices, id: \.self) { index in
+                                    
+                                    Text("\(contacts[index].organizationName) - \(contacts[index].givenName)")
+                                    
+                                }
                             }
+                            .pickerStyle(.menu)
+                        } else {
+                            Text("No phone info found")
+                            
                         }
-                        .pickerStyle(.menu)
-                        
                     }
 //                    .onAppear(perform: {
 //                        contacts = await phoneCall.fetchSpecificContact(fax: fax)
