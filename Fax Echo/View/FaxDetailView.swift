@@ -24,6 +24,8 @@ struct FaxDetailView: View {
 //    @State var phone: String
     
     @State var contacts: [CNContact] = []
+    var phoneNumbers: [CNPhoneNumber] = []
+
 
     let phoneCall = PhoneCall()
     
@@ -100,18 +102,18 @@ struct FaxDetailView: View {
                         // Display Contacts name, org name in the section header
                         // *If not found, display "No contact info found"
                         if contacts != [] {
+                            
                             Picker("☏", selection: $contacts) {
-                                
-                                // * contacts[index].phoneNumbers, id: \.self) instead???
+
                                 ForEach(contacts.indices, id: \.self) { index in
+                                    Text("\(contacts[index].organizationName) - \(contacts[index].givenName) - \(contacts[index].phoneNumbers.first?.value.stringValue ?? "No Phone Number Found")")
                                     
-                                    Text("\(contacts[index].organizationName) - \(contacts[index].givenName)")
                                     
                                 }
                             }
                             .pickerStyle(.menu)
                         } else {
-                            Text("No phone info found")
+                            Text("No contact info found")
                             
                         }
                     }
@@ -144,6 +146,24 @@ struct FaxDetailView: View {
         }
         
     }
+    
+//    private func getPhoneNumbers(contacts: [CNContact]) -> [String] {
+//        
+//        var phoneNumbersObtained: [String] = []
+//        
+//        contacts.forEach {(contact) in
+//            for number in contact.phoneNumbers {
+//                if let phone = number.value.stringValue as? CNPhoneNumber {
+//                    print(phone.stringValue)
+//                    phoneNumbersObtained.append(phone.stringValue)
+//                } else {
+//                    print ("number.value not of type CNPhoneNumber")
+//                }
+//            }
+//            
+//        return phoneNumbersObtained
+//        }
+//    }
     
     private func update(replyMethod: ReplyMethodEnum, replyStatusResult: ReplyStatusResultEnum) {
         if status.replyStatusResult.rawValue == "No Status" {
