@@ -20,9 +20,8 @@ struct FaxDetailView: View {
     @Binding var status: ReplyStatus
     
     @ObservedObject var token: Token
-    
-//    @State var phone: String
-    
+        
+    @State private var selectedContactIndex: Int = 0 // Tracks the selected contact index
     @State var contacts: [CNContact] = []
     var phoneNumbers: [CNPhoneNumber] = []
 
@@ -85,9 +84,6 @@ struct FaxDetailView: View {
                 
                 VStack(alignment: .leading){
                     Button(action: {
-                        // Get phone numbers of the contact from Contacts
-                        // Assign it to var phones property
-                        // List them in Picker
 //                        Link("\(phone)", destination: URL(string: "tel: \(phone)")!) // Add nil error code later
 //                        print("Reply by Phone Pressed: \(phone)")
 //
@@ -101,8 +97,9 @@ struct FaxDetailView: View {
                     HStack {
                         // Display Contacts name, org name in the section header
                         // *If not found, display "No contact info found"
-                        if contacts != [] {
-                            
+
+                        if !contacts.isEmpty {
+
                             Picker("☏", selection: $contacts) {
 
                                 ForEach(contacts.indices, id: \.self) { index in
@@ -117,9 +114,6 @@ struct FaxDetailView: View {
                             
                         }
                     }
-//                    .onAppear(perform: {
-//                        contacts = await phoneCall.fetchSpecificContact(fax: fax)
-//                    })
                     
                 }
                 
