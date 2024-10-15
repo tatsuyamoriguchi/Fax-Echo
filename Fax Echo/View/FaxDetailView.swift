@@ -100,12 +100,11 @@ struct FaxDetailView: View {
 
                         if !contacts.isEmpty {
 
-                            Picker("☏", selection: $contacts) {
+                            Picker("☏", selection: $selectedContactIndex) { // Bind to selectedContactIndex
 
                                 ForEach(contacts.indices, id: \.self) { index in
-                                    Text("\(contacts[index].organizationName) - \(contacts[index].givenName) - \(contacts[index].phoneNumbers.first?.value.stringValue ?? "No Phone Number Found")")
-                                    
-                                    
+                                    Text("\(contacts[index].givenName) \(contacts[index].familyName) - \(contacts[index].organizationName):  \(contacts[index].phoneNumbers.first?.value.stringValue ?? "No Phone Number Found")")
+                                        .tag(index) // Tag each row with its index
                                 }
                             }
                             .pickerStyle(.menu)
