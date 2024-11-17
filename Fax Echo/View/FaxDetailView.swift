@@ -20,12 +20,12 @@ struct FaxDetailView: View {
     @Binding var status: ReplyStatus
     
     @ObservedObject var token: Token
-        
+    
     @State private var selectedContactIndex: Int = 0 // Tracks the selected contact index
     @State var contacts: [CNContact] = []
     var phoneNumbers: [CNPhoneNumber] = []
-
-
+    
+    
     let phoneCall = PhoneCall()
     
     let dateFormatter: DateFormatter = {
@@ -83,37 +83,95 @@ struct FaxDetailView: View {
                 
                 
                 VStack(alignment: .leading){
-                    Button(action: {
-//                        Link("\(phone)", destination: URL(string: "tel: \(phone)")!) // Add nil error code later
-//                        print("Reply by Phone Pressed: \(phone)")
-//
-//                        //  UIApplication.shared.open(URL(string: "tel:\(phone)")!)
-                    }) {
-                        Label("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue)
-                            .lineLimit(1) // Ensure single line
-                            .fixedSize(horizontal: true, vertical: false) // Prevents text from wrapping
-                    }
                     
-                    HStack {
+//                    Label("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue)
+//                    // .lineLimit(3) // Ensure single line
+//                        .fixedSize(horizontal: true, vertical: false) // Prevents text from wrapping
+                    // Button to invoke the action
+                    Button("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue) {
+                        callSelectedContact()
+                    }
+
+//                    Button(action: {
+//                        callSelectedContact()
+//                    }) {
+//                        HStack {
+//                            Image(systemName: MenuIcon.replyByPhone.rawValue)
+//                        }
+//                        .foregroundColor(.white)
+//                        .padding()
+//                        .background(Color.blue)
+//                        .cornerRadius(8)
+//                    }
+
+                    
+                    VStack {
                         // Display Contacts name, org name in the section header
                         // *If not found, display "No contact info found"
-
+                        // Make Picker rows clickable to execute actions.
+                        
                         if !contacts.isEmpty {
-
-                            Picker("☏", selection: $selectedContactIndex) { // Bind to selectedContactIndex
-
+                            
+                            Picker("", selection: $selectedContactIndex) { // Bind to selectedContactIndex
+                                
                                 ForEach(contacts.indices, id: \.self) { index in
+                                                                        
                                     Text("\(contacts[index].givenName) \(contacts[index].familyName) - \(contacts[index].organizationName):  \(contacts[index].phoneNumbers.first?.value.stringValue ?? "No Phone Number Found")")
+//                                    Text("\(contacts[index].organizationName)")  
                                         .tag(index) // Tag each row with its index
+                                    //                                            .onTapGesture {
+                                    //                                                //  Clickable telphone number
+                                    //                                                Link("TEST", destination: URL(string: "tel:\(contacts[index].phoneNumbers.first?.value.stringValue ?? "No Phone Number Found")")!)
+                                    //                                                print("Hello")
+                                    //                                            }
+                                    
                                 }
+                                
                             }
                             .pickerStyle(.menu)
+                            
+//                            Divider()
+                            
+                            // Display the selected row details
+                            //                            VStack(alignment: .leading, spacing: 8) {
+//                            HStack {
+//                               
+//                                    Text("\(contacts[selectedContactIndex].givenName) \(contacts[selectedContactIndex].familyName)")
+//                                        .frame(maxWidth: .infinity, alignment: .leading) // Push name to the left
+//                                    
+//                                    Text("\(contacts[selectedContactIndex].phoneNumbers.first?.value.stringValue ?? "No Phone Number")")
+                                    
+//                                        .padding()
+//                                        .background(Color.gray.opacity(0.1))
+//                                        .cornerRadius(8)
+//                                        .lineLimit(1) // Prevent text wrapping
+//                                        .truncationMode(.tail) // Add ellipsis if text overflows
+//                                        .frame(maxWidth: .infinity, alignment: .center) // Allow it to grow horizontally
+                                    
+                                
+//                                // Button to invoke the action
+//                                Button(action: {
+//                                    callSelectedContact()
+//                                }) {
+//                                    HStack {
+//                                        Image(systemName: "phone.fill")
+//                                    }
+//                                    .foregroundColor(.white)
+//                                    .padding()
+//                                    .background(Color.blue)
+//                                    .cornerRadius(8)
+//                                }
+//                            }
+                            
+//                            .padding()
+                            
+                            
                         } else {
                             Text("No contact info found")
                             
                         }
+                        
                     }
-                    
                 }
                 
                 Button("Reply by Message", systemImage: MenuIcon.replyByMessage.rawValue) {
@@ -140,23 +198,24 @@ struct FaxDetailView: View {
         
     }
     
-//    private func getPhoneNumbers(contacts: [CNContact]) -> [String] {
-//        
-//        var phoneNumbersObtained: [String] = []
-//        
-//        contacts.forEach {(contact) in
-//            for number in contact.phoneNumbers {
-//                if let phone = number.value.stringValue as? CNPhoneNumber {
-//                    print(phone.stringValue)
-//                    phoneNumbersObtained.append(phone.stringValue)
-//                } else {
-//                    print ("number.value not of type CNPhoneNumber")
-//                }
-//            }
-//            
-//        return phoneNumbersObtained
-//        }
-//    }
+    
+    private func callSelectedContact() {
+        //        if let phoneNumber = contacts[index].phoneNumbers.first?.value.stringValue {
+        //            if let url = URL(string: "tel: \(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+        //                UIApplication.shared.canOpenURL(url)
+        //            }
+        //        }
+        //        print("Tapped contact at \(index). ")
+        //
+        let contact = contacts[selectedContactIndex]
+        if let phoneNumber = contact.phoneNumbers.first?.value.stringValue,
+           let url = URL(string: "tel:\(phoneNumber)"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+        print("Calling \(contact.givenName) \(contact.familyName)")
+        
+    }
     
     private func update(replyMethod: ReplyMethodEnum, replyStatusResult: ReplyStatusResultEnum) {
         if status.replyStatusResult.rawValue == "No Status" {
