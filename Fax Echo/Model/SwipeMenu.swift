@@ -42,9 +42,9 @@ enum MenuTitle: String {
 enum MenuIcon: String {
     
     case replyByFax = "faxmachine.fill"
-    case replyByPhone = "phone.bubble"
-    case replyByMessage = "text.bubble"
+    case replyByPhone = "phone.bubble.fill"
+    case replyByMessage = "text.bubble.fill"
     case deleteAsSpam = "trash.fill"
-    case noAction = "archivebox"
+    case noAction = "archivebox.fill"
 }
 
