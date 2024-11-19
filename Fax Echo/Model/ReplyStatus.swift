@@ -16,7 +16,7 @@ class ReplyStatus: Hashable {
     var replyMethod: ReplyMethodEnum
     var replyStatusResult: ReplyStatusResultEnum
     var replyFaxID: String
-    var replyTimeStamp: Date
+    var replyTimeStamp: Date? = nil
     
     init(fax_id: String, replyMethod: ReplyMethodEnum, replyStatusResult: ReplyStatusResultEnum, replyFaxID: String, replyTimeStamp: Date) {
         self.fax_id = fax_id

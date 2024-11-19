@@ -68,12 +68,17 @@ struct FaxDetailView: View {
                     Text("No Reply History")
                 } else {
                     Text("\(String(describing: status.replyStatusResult.rawValue)) by \(String(describing: status.replyMethod))")
-                    Text("\(dateFormatter.string(from: status.replyTimeStamp))")
+                    Text("\(dateFormatter.string(from: status.replyTimeStamp!))")
+                   
                 }
+                Button("Reset") {
+                    modelContext.delete(status)
+                }
+                
                 Button("Reply by FAX", systemImage: MenuIcon.replyByFax.rawValue) {
-                    print("FAX button tapped")
+                    
                     isFaxPresented = true
-                    print("token.access_token @Button Tapped, Reply by Fax, of FaxDetailView(): \(token.access_token)")
+//                    print("token.access_token @Button Tapped, Reply by Fax, of FaxDetailView(): \(token.access_token)")
                     
                 }
                 .sheet(isPresented: $isFaxPresented) {
@@ -86,6 +91,24 @@ struct FaxDetailView: View {
                     
                     Button("Reply by Phone", systemImage: MenuIcon.replyByPhone.rawValue) {
                         callSelectedContact()
+                        // if reply status doesn't exists
+                        if status.replyStatusResult.rawValue == "No Status" {
+                            let newDataToAdd = ReplyStatus(
+                                fax_id: fax.fax_id,
+                                replyMethod: ReplyMethodEnum.phone,
+                                replyStatusResult:  ReplyStatusResultEnum(rawValue: ReplyStatusResultEnum.completed.rawValue) ?? .noStatus,
+                                replyFaxID: "TEST",
+                                replyTimeStamp: Date())
+                            
+                            modelContext.insert(newDataToAdd)
+                        } else {
+                            // else { update the exisiting reply status data with new values.
+                            status.replyTimeStamp = Date()
+                            status.replyMethod = .phone
+                            status.replyStatusResult = .completed
+                            
+                        }
+                        
                     }
 
                     

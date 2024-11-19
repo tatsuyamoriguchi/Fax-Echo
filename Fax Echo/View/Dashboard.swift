@@ -66,7 +66,7 @@ struct FaxRowView: View {
                 
                 
                 if currentStatus?.replyTimeStamp != nil {
-                    let timeString = dateTimeFormatter.date2String(from: getReplyStatus(fax.fax_id).replyTimeStamp)
+                    let timeString = dateTimeFormatter.date2String(from: getReplyStatus(fax.fax_id).replyTimeStamp!)
                     Text(dateTimeFormatter.formattedDateOnly(from: timeString))
                         .font(.caption)
                         .foregroundColor(getReplyStatus(fax.fax_id).replyStatusResult == .archived ? Color.gray.opacity(0.5) : .none)
